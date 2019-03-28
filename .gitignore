@@ -1,2 +1,6 @@
 *.wasm
 *.class
+*.tar.gz
+*.pdf
+*.cmi
+*.cmo
