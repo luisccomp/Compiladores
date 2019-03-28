@@ -22,7 +22,6 @@
                 | PTV
                 | PTO
                 | MENOS
-                | IF
                 | ELSE
                 | IGUAL
                 | DIFER
@@ -34,9 +33,10 @@
                 | OULOG
                 | NOT
                 | STRING
-                | LITFLOAT
+                | LITFLOAT of float
                 | VEZES
                 | DIV
+                | VIRG
                 | LITINT of int
                 | LITSTRING of string
                 | ID of string
@@ -113,6 +113,7 @@ rule token = parse
 | "String"            { STRING }
 | '*'                 { VEZES }
 | '/'                 { DIV }
+| ','                 { VIRG }
 | numfloat as num     { let numero = float_of_string num in
                         LITFLOAT numero }
 | inteiro as num      { let numero = int_of_string num in
