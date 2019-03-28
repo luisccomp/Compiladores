@@ -1,0 +1,7 @@
+if while 123 //comentario
+linha2 "abc\"def" /*
+    comentario 1
+*/
+z := "abc" + "def"
+while2
+

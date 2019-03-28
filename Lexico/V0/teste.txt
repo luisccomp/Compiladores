@@ -1,0 +1,3 @@
+if while 123 //comentario
+linha2
+while2
