@@ -8,6 +8,8 @@
     (* Tokens lexicais da mini linguagem *)
     type tokens = APAR
                 | FPAR
+                | ACOL
+                | FCOL
                 | ATRIB
                 | IF
                 | WHILE
@@ -40,6 +42,7 @@
                 | LITINT of int
                 | LITSTRING of string
                 | ID of string
+                | PRINT
                 | EOF
 
     (* Incrmenta o contador de linha do analisador léxico para controlar qual
@@ -89,12 +92,15 @@ rule token = parse
 | "/*"                { comentario_bloco 0 lexbuf }
 | '('                 { APAR }
 | ')'                 { FPAR }
+| '['                 { ACOL }
+| ']'                 { FCOL }
 | '+'                 { MAIS }
 | '='                 { ATRIB }
 | "public"            { PUBLIC }
 | "class"             { CLASS }
 | "static"            { STATIC }
 | "void"              { VOID }
+| "System.out.printf" { PRINT } (* Instrução de impressão na tela *)
 | '{'                 { ACHAVE }
 | '}'                 { FCHAVE }
 | "int"               { INT }

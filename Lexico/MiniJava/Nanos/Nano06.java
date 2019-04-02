@@ -1,7 +1,7 @@
 public class Nano06 {
-    public static void main() {
+    public static void main(String[] args) {
         int n;
         n = 1-2;
-        System.out.println(n);
+        System.out.printf("%d\n", n);
     }
 }

@@ -1,12 +1,12 @@
 public class Nano10 {
-    public static void main() {
+    public static void main(String[] args) {
         int n, m;
         n = 1;
         m = 2;
         if(n==m){
-            System.out.println(n);
+            System.out.printf("%d\n", n);
         }else{
-            System.out.println(0);
+            System.out.printf("%d\n", 0);
         }
     }
     

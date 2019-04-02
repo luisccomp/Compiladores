@@ -1,5 +1,5 @@
 public class Nano11 {
-    public static void main() {
+    public static void main(String[] args) {
         int n, m, x;
 
         n = 1;
@@ -7,7 +7,7 @@ public class Nano11 {
         x = 5;
         while (x>n) {
             n = n + m;
-            System.out.println(n);
+            System.out.printf("%d\n", n);
         }
     }   
 }
