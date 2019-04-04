@@ -53,6 +53,10 @@
                 | BREAK
                 | CHAR
                 | FOR
+                | MAISIGUAL
+                | MENOSIGUAL
+                | VEZESIGUAL
+                | DIVIGUAL
                 | LITINT of int
                 | LITSTRING of string
                 | LITCHAR of char
@@ -113,6 +117,10 @@ rule token = parse
 | '['                                  { ACOL }
 | ']'                                  { FCOL }
 | "import"                             { IMPORT }
+| "+="                                 { MAISIGUAL }
+| "-="                                 { MENOSIGUAL }
+| "*="                                 { VEZESIGUAL }
+| "/="                                 { DIVIGUAL }
 | "++"                                 { MAISMAIS }
 | "--"                                 { MENOSMENOS }
 | '+'                                  { MAIS }
