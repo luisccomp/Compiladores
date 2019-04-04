@@ -39,6 +39,10 @@
                 | VEZES
                 | DIV
                 | VIRG
+                | FLOAT
+                | READFLOAT
+                | IMPORT
+                | READINT
                 | LITINT of int
                 | LITSTRING of string
                 | ID of string
@@ -86,74 +90,79 @@ let comentario = "//" [^ '\r' '\n']*
 (* Regras lexicais: aqui estão as regras de produção dos tokens lexicais da
    mini linguagem. *)
 rule token = parse
-  brancos             { token lexbuf }                        (* Descarta o token *)
-| novalinha           { incr_num_linha lexbuf; token lexbuf } (* Incrementa o numero de linha e descarta o token *)
-| comentario          { token lexbuf }                        (* Descarta o token *)
-| "/*"                { comentario_bloco 0 lexbuf }
-| '('                 { APAR }
-| ')'                 { FPAR }
-| '['                 { ACOL }
-| ']'                 { FCOL }
-| '+'                 { MAIS }
-| '='                 { ATRIB }
-| "public"            { PUBLIC }
-| "class"             { CLASS }
-| "static"            { STATIC }
-| "void"              { VOID }
-| "System.out.printf" { PRINT } (* Instrução de impressão na tela *)
-| '{'                 { ACHAVE }
-| '}'                 { FCHAVE }
-| "int"               { INT }
-| ';'                 { PTV }
-| '.'                 { PTO }
-| '-'                 { MENOS }
-| "=="                { IGUAL }
-| "!="                { DIFER }
-| '>'                 { MAIOR }
-| '<'                 { MENOR }
-| ">="                { MAIORIGUAL }
-| "<="                { MENORIGUAL }
-| "&&"                { ELOG }
-| "||"                { OULOG }
-| '!'                 { NOT }
-| "String"            { STRING }
-| '*'                 { VEZES }
-| '/'                 { DIV }
-| ','                 { VIRG }
-| numfloat as num     { let numero = float_of_string num in
-                        LITFLOAT numero }
-| inteiro as num      { let numero = int_of_string num in
-                        LITINT numero }
-| "if"                { IF }
-| "else"              { ELSE }
-| "while"             { WHILE }
-| identificador as id { ID id }
-| '"'                 { let pos = lexbuf.lex_curr_p in
-                        let lin = pos.pos_lnum
-                        and col = pos.pos_cnum - pos.pos_bol - 1 in
-                        let buffer = Buffer.create 1 in
-                        let str = leia_string lin col buffer lexbuf in
-                        LITSTRING str }
-| _ as c              { failwith (msg_erro lexbuf c) }
-| eof                 { EOF }
+  brancos                              { token lexbuf }                        (* Descarta o token *)
+| novalinha                            { incr_num_linha lexbuf; token lexbuf } (* Incrementa o numero de linha e descarta o token *)
+| comentario                           { token lexbuf }                        (* Descarta o token *)
+| "Scanner s = new Scanner(System.in)" { token lexbuf }
+| "/*"                                 { comentario_bloco 0 lexbuf }
+| '('                                  { APAR }
+| ')'                                  { FPAR }
+| '['                                  { ACOL }
+| ']'                                  { FCOL }
+| "import"                             { IMPORT }
+| '+'                                  { MAIS }
+| '='                                  { ATRIB }
+| "public"                             { PUBLIC }
+| "class"                              { CLASS }
+| "static"                             { STATIC }
+| "void"                               { VOID }
+| "System.out.printf"                  { PRINT } (* Instrução de impressão na tela *)
+| '{'                                  { ACHAVE }
+| '}'                                  { FCHAVE }
+| "int"                                { INT }
+| "float"                              { FLOAT }
+| "Float.parseFloat(s.nextLine())"     { READFLOAT }
+| "Integer.parseInt(s.nextLine())"     { READINT }
+| ';'                                  { PTV }
+| '.'                                  { PTO }
+| '-'                                  { MENOS }
+| "=="                                 { IGUAL }
+| "!="                                 { DIFER }
+| '>'                                  { MAIOR }
+| '<'                                  { MENOR }
+| ">="                                 { MAIORIGUAL }
+| "<="                                 { MENORIGUAL }
+| "&&"                                 { ELOG }
+| "||"                                 { OULOG }
+| '!'                                  { NOT }
+| "String"                             { STRING }
+| '*'                                  { VEZES }
+| '/'                                  { DIV }
+| ','                                  { VIRG }
+| numfloat as num                      { let numero = float_of_string num in
+                                         LITFLOAT numero }
+| inteiro as num                       { let numero = int_of_string num in
+                                         LITINT numero }
+| "if"                                 { IF }
+| "else"                               { ELSE }
+| "while"                              { WHILE }
+| identificador as id                  { ID id }
+| '"'                                  { let pos = lexbuf.lex_curr_p in
+                                         let lin = pos.pos_lnum
+                                         and col = pos.pos_cnum - pos.pos_bol - 1 in
+                                         let buffer = Buffer.create 1 in
+                                         let str = leia_string lin col buffer lexbuf in
+                                         LITSTRING str }
+| _ as c                               { failwith (msg_erro lexbuf c) }
+| eof                                  { EOF }
 and leia_string lin col buffer = parse
-  '"'                 { Buffer.contents buffer }
-| "\\t"               { Buffer.add_char buffer '\t';
-                        leia_string lin col buffer lexbuf }
-| "\\n"               { Buffer.add_char buffer '\n';
-                        leia_string lin col buffer lexbuf }
-| '\\' '"'            { Buffer.add_char buffer '"';
-                        leia_string lin col buffer lexbuf }
-| '\\' '\\'           { Buffer.add_char buffer '\\';
-                        leia_string lin col buffer lexbuf }
-| _ as c              { Buffer.add_char buffer c;
-                        leia_string lin col buffer lexbuf }
-| eof                 { erro lin col "A string nao foi fechada" }
+  '"'                                  { Buffer.contents buffer }
+| "\\t"                                { Buffer.add_char buffer '\t';
+                                         leia_string lin col buffer lexbuf }
+| "\\n"                                { Buffer.add_char buffer '\n';
+                                         leia_string lin col buffer lexbuf }
+| '\\' '"'                             { Buffer.add_char buffer '"';
+                                         leia_string lin col buffer lexbuf }
+| '\\' '\\'                            { Buffer.add_char buffer '\\';
+                                         leia_string lin col buffer lexbuf }
+| _ as c                               { Buffer.add_char buffer c;
+                                         leia_string lin col buffer lexbuf }
+| eof                                  { erro lin col "A string nao foi fechada" }
 and comentario_bloco n = parse
-  "*/"                { if n=0 then token lexbuf
-                        else comentario_bloco (n-1) lexbuf }
-| "/*"                { comentario_bloco (n+1) lexbuf }
-| novalinha           { incr_num_linha lexbuf;
-                        comentario_bloco n lexbuf }
-| _                   { comentario_bloco n lexbuf }
-| eof                 { failwith "Comentario bloco nao fechado" }
+  "*/"                                 { if n=0 then token lexbuf
+                                         else comentario_bloco (n-1) lexbuf }
+| "/*"                                 { comentario_bloco (n+1) lexbuf }
+| novalinha                            { incr_num_linha lexbuf;
+                                         comentario_bloco n lexbuf }
+| _                                    { comentario_bloco n lexbuf }
+| eof                                  { failwith "Comentario bloco nao fechado" }

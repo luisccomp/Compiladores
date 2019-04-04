@@ -7,7 +7,7 @@ public class Micro01 {
 
 		System.out.printf("Tabela de conversão: Celcius -> Farenheit\n");
 		System.out.printf("Digite a temperatura em Celcius:");
-		cel = s.nextFloat();
+		cel = Float.parseFloat(s.nextLine());
 		far = (9*cel+160)/5;
 		System.out.printf("A nova temperatura é: %f F\n", far);
 	}
