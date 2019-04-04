@@ -6,6 +6,7 @@ public class Program {
         String nome;
         char caractere = 'b';
         int numero;
+		boolean bool;
 
         System.out.printf("Digite o seu nome: ");
         nome = s.nextLine();

@@ -1,3 +1,5 @@
+(* Para carregar esse arquivo, abra o intérprete ocaml e digite:
+   #use "carregador.ml";; *)
 #load "lexico.cmo";;
 
 
