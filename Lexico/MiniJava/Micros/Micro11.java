@@ -7,7 +7,7 @@ public class Micro11 {
         Scanner s = new Scanner(System.in);
 
         System.out.printf("Digite um número: ");
-        numero = s.nextInt();
+        numero = Integer.parseInt(s.nextLine());
         x = verifica(numero);
 
         if (x == 1) {

@@ -4,7 +4,7 @@ public class Program {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String nome;
-        char caractere;
+        char caractere = 'b';
         int numero;
 
         System.out.printf("Digite o seu nome: ");

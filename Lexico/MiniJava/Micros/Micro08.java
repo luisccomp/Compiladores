@@ -8,14 +8,13 @@ public class Micro08 {
         numero = 1;
 
         while (numero != 0) {
-            System.out.println("Digite um numero: ");
-            numero = s.nextInt();
+            System.out.printf("Digite um numero: ");
+            numero = Integer.parseInt(s.nextLine());
 
             if (numero > 10) {
-                System.out.printf("O numero %d é maior que 10\n", numero);
-            }
-            else {
-                System.out.printf("O numero %d é menor que 10\n", numero);
+                System.out.printf("O numero %d e maior que 10", numero);
+            } else {
+                System.out.printf("O numero %d e menor que 10", numero);
             }
         }
     }

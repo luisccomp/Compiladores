@@ -43,8 +43,19 @@
                 | READFLOAT
                 | IMPORT
                 | READINT
+                | READCHAR
+                | READSTRING
+                | MAISMAIS
+                | MENOSMENOS
+                | DPTOS
+                | SWITCH
+                | CASE
+                | BREAK
+                | CHAR
+                | FOR
                 | LITINT of int
                 | LITSTRING of string
+                | LITCHAR of char
                 | ID of string
                 | PRINT
                 | EOF
@@ -82,6 +93,8 @@ let identificador = letra (letra | digito | '_')*
 
 let numfloat = digito+ '.' digito* | digito* '.' digito+
 
+let caractere = '\'' letra '\''
+
 let brancos = [' ' '\t']+
 let novalinha = '\r' | '\n' | "\r\n"
 
@@ -100,20 +113,29 @@ rule token = parse
 | '['                                  { ACOL }
 | ']'                                  { FCOL }
 | "import"                             { IMPORT }
+| "++"                                 { MAISMAIS }
+| "--"                                 { MENOSMENOS }
 | '+'                                  { MAIS }
 | '='                                  { ATRIB }
 | "public"                             { PUBLIC }
+| "char"                               { CHAR }
 | "class"                              { CLASS }
 | "static"                             { STATIC }
 | "void"                               { VOID }
 | "System.out.printf"                  { PRINT } (* Instrução de impressão na tela *)
+| "switch"                             { SWITCH }
+| "case"                               { CASE }
+| "break"                              { BREAK }
 | '{'                                  { ACHAVE }
 | '}'                                  { FCHAVE }
 | "int"                                { INT }
 | "float"                              { FLOAT }
 | "Float.parseFloat(s.nextLine())"     { READFLOAT }
 | "Integer.parseInt(s.nextLine())"     { READINT }
+| "s.nextLine().charAt(0)"             { READCHAR }
+| "s.nextLine()"                       { READSTRING }
 | ';'                                  { PTV }
+| ':'                                  { DPTOS }
 | '.'                                  { PTO }
 | '-'                                  { MENOS }
 | "=="                                 { IGUAL }
@@ -129,6 +151,7 @@ rule token = parse
 | '*'                                  { VEZES }
 | '/'                                  { DIV }
 | ','                                  { VIRG }
+| caractere as chr                     { LITCHAR chr.[1] }
 | numfloat as num                      { let numero = float_of_string num in
                                          LITFLOAT numero }
 | inteiro as num                       { let numero = int_of_string num in
@@ -136,6 +159,7 @@ rule token = parse
 | "if"                                 { IF }
 | "else"                               { ELSE }
 | "while"                              { WHILE }
+| "for"                                { FOR }
 | identificador as id                  { ID id }
 | '"'                                  { let pos = lexbuf.lex_curr_p in
                                          let lin = pos.pos_lnum

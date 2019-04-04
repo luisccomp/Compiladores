@@ -4,8 +4,10 @@ public class Micro06 {
     public static void main(String[] args) {
         int numero;
         Scanner s = new Scanner(System.in);
-        System.out.println("Digite um numero de 1  a 5:");
-        numero = s.nextInt();
+
+        System.out.printf("Digite um numero de 1 a 5: ");
+        numero = Integer.parseInt(s.nextLine());
+        
         switch (numero) {
             case 1:
                 System.out.printf("Um\n");
@@ -23,7 +25,7 @@ public class Micro06 {
                 System.out.printf("Cinco\n");
                 break;
             default:
-                System.out.printf("Numero invalido!!!\n");
+                System.out.printf("Numero invalido!!!");
         }
     }
 }

@@ -7,12 +7,12 @@ public class Micro10 {
         Scanner s = new Scanner(System.in);
 
         System.out.printf("Digite um numero: ");
-        numero = s.nextInt();
+        numero = Integer.parseInt(s.nextLine());
         fat = fatorial(numero);
     
         System.out.printf("O fatorial de ");
         System.out.printf("%d", numero);
-        System.out.printf(" é ");
+        System.out.printf(" e ");
         System.out.printf("%d", fat);
     }
 

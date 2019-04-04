@@ -9,24 +9,25 @@ public class Micro07 {
         programa = 1;
 
         while (programa == 1) {
-            System.out.printf("Digite um numero:");
-            numero = s.nextInt();
+            System.out.printf("Digite um numero: ");
+            numero = Integer.parseInt(s.nextLine());
 
             if (numero > 0) {
-                System.out.printf("Positivo");
+                System.out.printf("Positivo\n");
             } else {
                 if (numero == 0) {
-                    System.out.printf("O numero é igual a 0");
+                    System.out.printf("O numero e igual a 0\n");
                 }
+
                 if (numero < 0) {
-                    System.out.printf("Negativo");
+                    System.out.printf("Negativo\n");
                 }
             }
 
-            System.out.printf("Desjea finalizar? (S/N)");
+            System.out.printf("Deseja finalizar? (S/N) ");
             opc = s.nextLine().charAt(0);
 
-            if (opc == 's') {
+            if (opc == 'S') {
                 programa = 0;
             }
         }

@@ -5,10 +5,10 @@ public class Micro01 {
 		float cel, far;
 		Scanner s = new Scanner(System.in);
 
-		System.out.printf("Tabela de conversão: Celcius -> Farenheit\n");
+		System.out.printf("Tabela de conversao: Celcius -> Farenheit\n");
 		System.out.printf("Digite a temperatura em Celcius:");
 		cel = Float.parseFloat(s.nextLine());
 		far = (9*cel+160)/5;
-		System.out.printf("A nova temperatura é: %f F\n", far);
+		System.out.printf("A nova temperatura e: %f F\n", far);
 	}
 }
