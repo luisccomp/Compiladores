@@ -56,9 +56,9 @@
                 | MAISIGUAL
                 | MENOSIGUAL
                 | VEZESIGUAL
-				| BOOLEAN
+                | BOOLEAN
                 | DIVIGUAL
-				| LITBOOL of bool			
+                | LITBOOL of bool			
                 | LITINT of int
                 | LITSTRING of string
                 | LITCHAR of char
