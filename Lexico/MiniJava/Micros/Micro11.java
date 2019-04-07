@@ -6,19 +6,19 @@ public class Micro11 {
         int x;
         Scanner s = new Scanner(System.in);
 
-        System.out.printf("Digite um número: ");
+        System.out.printf("Digite um numero: ");
         numero = Integer.parseInt(s.nextLine());
         x = verifica(numero);
 
         if (x == 1) {
-            System.out.printf("Número positivo\n");
+            System.out.printf("Numero positivo\n");
         }
         else
         if (x == 0) {
             System.out.printf("Zero\n");
         }
         else {
-            System.out.printf("Número negativo\n");
+            System.out.printf("Numero negativo\n");
         }
     }
 

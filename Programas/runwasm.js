@@ -69,6 +69,12 @@ function loadWebAssembly(filename, imports) {
         params[0] = content;
 
         process.stdout.write(printf.apply(this, params));
+      },
+      readFloat: function () {
+        return scanf("%f");
+      },
+      readInt: function () {
+        return scanf("%d");
       }
     }
 
