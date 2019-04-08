@@ -6,3 +6,9 @@
 *.cmo
 .vscode
 lexico.ml
+wasm-interp
+wasm2c
+wasm2wat
+wat2wasm
+package-lock.json
+node_modules

@@ -116,10 +116,7 @@ rule token = parse
 | comentario                            { token lexbuf }                        (* Descarta o token *)
 | "Scanner s = new Scanner(System.in);" { token lexbuf }
 | "import java.util.Scanner;"           { token lexbuf }
-| "/*"                                  { let pos = lexbuf.lex_curr_p in 
-                                          let lin = pos.pos_lnum
-                                          and col = pos.pos_cnum - pos.pos_bol - 1 in
-                                          comentario_bloco lin col 0 lexbuf }
+| "/*"                                  { comentario_bloco 0 lexbuf }
 | '('                                   { APAR }
 | ')'                                   { FPAR }
 | '['                                   { ACOL }
@@ -201,14 +198,11 @@ and leia_string lin col buffer = parse
 | _ as c                                { Buffer.add_char buffer c;
                                           leia_string lin col buffer lexbuf }
 | eof                                   { erro lin col "A string nao foi fechada" }
-and comentario_bloco lin col n = parse
+and comentario_bloco n = parse
   "*/"                                  { if n=0 then token lexbuf
-                                          else comentario_bloco lin col (n-1) lexbuf }
-| "/*"                                  { let pos = lexbuf.lex_curr_p in
-                                          let lin = pos.pos_lnum
-                                          and col = pos.pos_cnum - pos.pos_bol - 1 in
-                                          comentario_bloco lin col (n+1) lexbuf }
+                                          else comentario_bloco (n-1) lexbuf }
+| "/*"                                  { comentario_bloco (n+1) lexbuf }
 | novalinha                             { incr_num_linha lexbuf;
-                                          comentario_bloco lin col n lexbuf }
-| _                                     { comentario_bloco lin col n lexbuf }
-| eof                                   { erro lin col "Comentario bloco nao fechado" }
+                                          comentario_bloco n lexbuf }
+| _                                     { comentario_bloco n lexbuf }
+| eof                                   { failwith "Comentario bloco nao fechado" }
