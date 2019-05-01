@@ -1,0 +1,13 @@
+programa
+   -- Lê e Soma dois números complexos
+   i, j, resultado: registro
+                       parte_real: inteiro;
+                       parte_imag: inteiro;
+                    fim registro;
+inicio
+   entrada i.parte_real, i.parte_imag;
+   entrada j.parte_real, j.parte_imag;
+   resultado.parte_real := i.parte_real + j.parte_real;
+   resultado.parte_imag := i.parte_imag + j.parte_imag;
+   saida resultado.parte_real, resultado.parte_imag;
+fim;

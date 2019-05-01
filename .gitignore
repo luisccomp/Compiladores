@@ -12,3 +12,6 @@ wasm2wat
 wat2wasm
 package-lock.json
 node_modules
+_build
+*.byte
+*.mli

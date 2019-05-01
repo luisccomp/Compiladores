@@ -1,0 +1,11 @@
+#use "topfind";;
+#require "menhirLib";;
+#directory "_build";;
+#load "erroSint.cmo";;
+#load "sintatico.cmo";;
+#load "lexico.cmo";;
+#load "ast.cmo";;
+#load "sintaticoTest.cmo";;
+open Ast
+open SintaticoTest
+

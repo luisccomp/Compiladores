@@ -1,0 +1,330 @@
+
+** Conflict (shift/reduce) in state 67.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao CONCAT expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 67, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao CONCAT expressao 
+                 expressao . OULOG expressao 
+
+** In state 67, looking ahead at OULOG, reducing production
+** expressao -> expressao CONCAT expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao CONCAT expressao . 
+
+** Conflict (shift/reduce) in state 65.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao DIFER expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 65, looking ahead at OULOG, reducing production
+** expressao -> expressao DIFER expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao DIFER expressao . 
+
+** In state 65, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao DIFER expressao 
+                expressao . OULOG expressao 
+
+** Conflict (shift/reduce) in state 63.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao DIV expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 63, looking ahead at OULOG, reducing production
+** expressao -> expressao DIV expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao DIV expressao . 
+
+** In state 63, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao DIV expressao 
+              expressao . OULOG expressao 
+
+** Conflict (shift/reduce) in state 61.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao ELOG expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 61, looking ahead at OULOG, reducing production
+** expressao -> expressao ELOG expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao ELOG expressao . 
+
+** In state 61, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao ELOG expressao 
+               expressao . OULOG expressao 
+
+** Conflict (shift/reduce) in state 59.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao IGUAL expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 59, looking ahead at OULOG, reducing production
+** expressao -> expressao IGUAL expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao IGUAL expressao . 
+
+** In state 59, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao IGUAL expressao 
+                expressao . OULOG expressao 
+
+** Conflict (shift/reduce) in state 57.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao MAIOR expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 57, looking ahead at OULOG, reducing production
+** expressao -> expressao MAIOR expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao MAIOR expressao . 
+
+** In state 57, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao MAIOR expressao 
+                expressao . OULOG expressao 
+
+** Conflict (shift/reduce) in state 55.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao MAIS expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 55, looking ahead at OULOG, reducing production
+** expressao -> expressao MAIS expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao MAIS expressao . 
+
+** In state 55, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao MAIS expressao 
+               expressao . OULOG expressao 
+
+** Conflict (shift/reduce) in state 53.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao MENOR expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 53, looking ahead at OULOG, reducing production
+** expressao -> expressao MENOR expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao MENOR expressao . 
+
+** In state 53, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao MENOR expressao 
+                expressao . OULOG expressao 
+
+** Conflict (shift/reduce) in state 51.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao MENOS expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 51, looking ahead at OULOG, reducing production
+** expressao -> expressao MENOS expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao MENOS expressao . 
+
+** In state 51, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao MENOS expressao 
+                expressao . OULOG expressao 
+
+** Conflict (shift/reduce) in state 49.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao MULT expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 49, looking ahead at OULOG, reducing production
+** expressao -> expressao MULT expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao MULT expressao . 
+
+** In state 49, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao MULT expressao 
+               expressao . OULOG expressao 
+
+** Conflict (shift/reduce) in state 47.
+** Tokens involved: OULOG MULT MENOS MENOR MAIS MAIOR IGUAL ELOG DIV DIFER CONCAT
+** The following explanations concentrate on token OULOG.
+** This state is reached from programa after reading:
+
+PROGRAMA list(declaracao) INICIO SE APAR expressao OULOG expressao 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+programa 
+PROGRAMA list(declaracao) INICIO list(comando) FIM EOF 
+                                 comando list(comando) 
+                                 comando_se 
+                                 SE APAR expressao FPAR ENTAO nonempty_list(comando) option(__anonymous_1) FIM SE PTV 
+                                         (?)
+
+** In state 47, looking ahead at OULOG, shifting is permitted
+** because of the following sub-derivation:
+
+expressao OULOG expressao 
+                expressao . OULOG expressao 
+
+** In state 47, looking ahead at OULOG, reducing production
+** expressao -> expressao OULOG expressao 
+** is permitted because of the following sub-derivation:
+
+expressao OULOG expressao // lookahead token appears
+expressao OULOG expressao . 

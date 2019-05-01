@@ -1,0 +1,7 @@
+programa
+   -- Operações aleatórias para teste com expressões
+   x, y: booleano;
+inicio
+  x := 1+2 < 3+4 && 5+6*4 > 5;
+  y := 2 = 5 && 4 = 4;
+fim;

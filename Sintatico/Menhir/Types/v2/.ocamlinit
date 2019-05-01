@@ -1,0 +1,8 @@
+#directory "_build";;
+#load "sintatico.cmo";;
+#load "lexico.cmo";;
+#load "ast.cmo";;
+#load "sintaticoTest.cmo";;
+open Ast
+open SintaticoTest
+
