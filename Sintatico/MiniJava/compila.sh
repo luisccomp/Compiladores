@@ -1,1 +1,2 @@
-ocamlbuild -use-menhir main.byte
+ocamlbuild -use-menhir sintaticoTest.byte
+

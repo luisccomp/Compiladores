@@ -1,0 +1,773 @@
+State 0:
+prog' -> . prog [ # ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On prog shift to state 37
+-- On expr shift to state 38
+
+State 1:
+expr -> NOT . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 36
+
+State 2:
+expr -> LITSTRING . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production expr -> LITSTRING 
+-- On OULOG reduce production expr -> LITSTRING 
+-- On MENOS reduce production expr -> LITSTRING 
+-- On MENORIGUAL reduce production expr -> LITSTRING 
+-- On MENOR reduce production expr -> LITSTRING 
+-- On MAIS reduce production expr -> LITSTRING 
+-- On MAIORIGUAL reduce production expr -> LITSTRING 
+-- On MAIOR reduce production expr -> LITSTRING 
+-- On IGUAL reduce production expr -> LITSTRING 
+-- On FPAR reduce production expr -> LITSTRING 
+-- On EOF reduce production expr -> LITSTRING 
+-- On ELOG reduce production expr -> LITSTRING 
+-- On DIV reduce production expr -> LITSTRING 
+-- On DIFER reduce production expr -> LITSTRING 
+
+State 3:
+expr -> LITINT . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production expr -> LITINT 
+-- On OULOG reduce production expr -> LITINT 
+-- On MENOS reduce production expr -> LITINT 
+-- On MENORIGUAL reduce production expr -> LITINT 
+-- On MENOR reduce production expr -> LITINT 
+-- On MAIS reduce production expr -> LITINT 
+-- On MAIORIGUAL reduce production expr -> LITINT 
+-- On MAIOR reduce production expr -> LITINT 
+-- On IGUAL reduce production expr -> LITINT 
+-- On FPAR reduce production expr -> LITINT 
+-- On EOF reduce production expr -> LITINT 
+-- On ELOG reduce production expr -> LITINT 
+-- On DIV reduce production expr -> LITINT 
+-- On DIFER reduce production expr -> LITINT 
+
+State 4:
+expr -> LITFLOAT . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production expr -> LITFLOAT 
+-- On OULOG reduce production expr -> LITFLOAT 
+-- On MENOS reduce production expr -> LITFLOAT 
+-- On MENORIGUAL reduce production expr -> LITFLOAT 
+-- On MENOR reduce production expr -> LITFLOAT 
+-- On MAIS reduce production expr -> LITFLOAT 
+-- On MAIORIGUAL reduce production expr -> LITFLOAT 
+-- On MAIOR reduce production expr -> LITFLOAT 
+-- On IGUAL reduce production expr -> LITFLOAT 
+-- On FPAR reduce production expr -> LITFLOAT 
+-- On EOF reduce production expr -> LITFLOAT 
+-- On ELOG reduce production expr -> LITFLOAT 
+-- On DIV reduce production expr -> LITFLOAT 
+-- On DIFER reduce production expr -> LITFLOAT 
+
+State 5:
+expr -> LITCHAR . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production expr -> LITCHAR 
+-- On OULOG reduce production expr -> LITCHAR 
+-- On MENOS reduce production expr -> LITCHAR 
+-- On MENORIGUAL reduce production expr -> LITCHAR 
+-- On MENOR reduce production expr -> LITCHAR 
+-- On MAIS reduce production expr -> LITCHAR 
+-- On MAIORIGUAL reduce production expr -> LITCHAR 
+-- On MAIOR reduce production expr -> LITCHAR 
+-- On IGUAL reduce production expr -> LITCHAR 
+-- On FPAR reduce production expr -> LITCHAR 
+-- On EOF reduce production expr -> LITCHAR 
+-- On ELOG reduce production expr -> LITCHAR 
+-- On DIV reduce production expr -> LITCHAR 
+-- On DIFER reduce production expr -> LITCHAR 
+
+State 6:
+expr -> LITBOOL . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production expr -> LITBOOL 
+-- On OULOG reduce production expr -> LITBOOL 
+-- On MENOS reduce production expr -> LITBOOL 
+-- On MENORIGUAL reduce production expr -> LITBOOL 
+-- On MENOR reduce production expr -> LITBOOL 
+-- On MAIS reduce production expr -> LITBOOL 
+-- On MAIORIGUAL reduce production expr -> LITBOOL 
+-- On MAIOR reduce production expr -> LITBOOL 
+-- On IGUAL reduce production expr -> LITBOOL 
+-- On FPAR reduce production expr -> LITBOOL 
+-- On EOF reduce production expr -> LITBOOL 
+-- On ELOG reduce production expr -> LITBOOL 
+-- On DIV reduce production expr -> LITBOOL 
+-- On DIFER reduce production expr -> LITBOOL 
+
+State 7:
+variavel -> ID . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production variavel -> ID 
+-- On OULOG reduce production variavel -> ID 
+-- On MENOS reduce production variavel -> ID 
+-- On MENORIGUAL reduce production variavel -> ID 
+-- On MENOR reduce production variavel -> ID 
+-- On MAIS reduce production variavel -> ID 
+-- On MAIORIGUAL reduce production variavel -> ID 
+-- On MAIOR reduce production variavel -> ID 
+-- On IGUAL reduce production variavel -> ID 
+-- On FPAR reduce production variavel -> ID 
+-- On EOF reduce production variavel -> ID 
+-- On ELOG reduce production variavel -> ID 
+-- On DIV reduce production variavel -> ID 
+-- On DIFER reduce production variavel -> ID 
+
+State 8:
+expr -> APAR . expr FPAR [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 10
+
+State 9:
+expr -> variavel . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production expr -> variavel 
+-- On OULOG reduce production expr -> variavel 
+-- On MENOS reduce production expr -> variavel 
+-- On MENORIGUAL reduce production expr -> variavel 
+-- On MENOR reduce production expr -> variavel 
+-- On MAIS reduce production expr -> variavel 
+-- On MAIORIGUAL reduce production expr -> variavel 
+-- On MAIOR reduce production expr -> variavel 
+-- On IGUAL reduce production expr -> variavel 
+-- On FPAR reduce production expr -> variavel 
+-- On EOF reduce production expr -> variavel 
+-- On ELOG reduce production expr -> variavel 
+-- On DIV reduce production expr -> variavel 
+-- On DIFER reduce production expr -> variavel 
+
+State 10:
+expr -> APAR expr . FPAR [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On OULOG shift to state 13
+-- On MENOS shift to state 15
+-- On MENORIGUAL shift to state 19
+-- On MENOR shift to state 23
+-- On MAIS shift to state 21
+-- On MAIORIGUAL shift to state 25
+-- On MAIOR shift to state 27
+-- On IGUAL shift to state 29
+-- On FPAR shift to state 35
+-- On ELOG shift to state 31
+-- On DIV shift to state 17
+-- On DIFER shift to state 33
+
+State 11:
+expr -> expr VEZES . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 12
+
+State 12:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr VEZES expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production expr -> expr VEZES expr 
+-- On OULOG reduce production expr -> expr VEZES expr 
+-- On MENOS reduce production expr -> expr VEZES expr 
+-- On MENORIGUAL reduce production expr -> expr VEZES expr 
+-- On MENOR reduce production expr -> expr VEZES expr 
+-- On MAIS reduce production expr -> expr VEZES expr 
+-- On MAIORIGUAL reduce production expr -> expr VEZES expr 
+-- On MAIOR reduce production expr -> expr VEZES expr 
+-- On IGUAL reduce production expr -> expr VEZES expr 
+-- On FPAR reduce production expr -> expr VEZES expr 
+-- On EOF reduce production expr -> expr VEZES expr 
+-- On ELOG reduce production expr -> expr VEZES expr 
+-- On DIV reduce production expr -> expr VEZES expr 
+-- On DIFER reduce production expr -> expr VEZES expr 
+
+State 13:
+expr -> expr OULOG . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 14
+
+State 14:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr OULOG expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On MENOS shift to state 15
+-- On MENORIGUAL shift to state 19
+-- On MENOR shift to state 23
+-- On MAIS shift to state 21
+-- On MAIORIGUAL shift to state 25
+-- On MAIOR shift to state 27
+-- On IGUAL shift to state 29
+-- On ELOG shift to state 31
+-- On DIV shift to state 17
+-- On DIFER shift to state 33
+-- On OULOG reduce production expr -> expr OULOG expr 
+-- On FPAR reduce production expr -> expr OULOG expr 
+-- On EOF reduce production expr -> expr OULOG expr 
+
+State 15:
+expr -> expr MENOS . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 16
+
+State 16:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr MENOS expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On DIV shift to state 17
+-- On OULOG reduce production expr -> expr MENOS expr 
+-- On MENOS reduce production expr -> expr MENOS expr 
+-- On MENORIGUAL reduce production expr -> expr MENOS expr 
+-- On MENOR reduce production expr -> expr MENOS expr 
+-- On MAIS reduce production expr -> expr MENOS expr 
+-- On MAIORIGUAL reduce production expr -> expr MENOS expr 
+-- On MAIOR reduce production expr -> expr MENOS expr 
+-- On IGUAL reduce production expr -> expr MENOS expr 
+-- On FPAR reduce production expr -> expr MENOS expr 
+-- On EOF reduce production expr -> expr MENOS expr 
+-- On ELOG reduce production expr -> expr MENOS expr 
+-- On DIFER reduce production expr -> expr MENOS expr 
+
+State 17:
+expr -> expr DIV . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 18
+
+State 18:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr DIV expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production expr -> expr DIV expr 
+-- On OULOG reduce production expr -> expr DIV expr 
+-- On MENOS reduce production expr -> expr DIV expr 
+-- On MENORIGUAL reduce production expr -> expr DIV expr 
+-- On MENOR reduce production expr -> expr DIV expr 
+-- On MAIS reduce production expr -> expr DIV expr 
+-- On MAIORIGUAL reduce production expr -> expr DIV expr 
+-- On MAIOR reduce production expr -> expr DIV expr 
+-- On IGUAL reduce production expr -> expr DIV expr 
+-- On FPAR reduce production expr -> expr DIV expr 
+-- On EOF reduce production expr -> expr DIV expr 
+-- On ELOG reduce production expr -> expr DIV expr 
+-- On DIV reduce production expr -> expr DIV expr 
+-- On DIFER reduce production expr -> expr DIV expr 
+
+State 19:
+expr -> expr MENORIGUAL . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 20
+
+State 20:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr MENORIGUAL expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On MENOS shift to state 15
+-- On MAIS shift to state 21
+-- On DIV shift to state 17
+-- On OULOG reduce production expr -> expr MENORIGUAL expr 
+-- On MENORIGUAL reduce production expr -> expr MENORIGUAL expr 
+-- On MENOR reduce production expr -> expr MENORIGUAL expr 
+-- On MAIORIGUAL reduce production expr -> expr MENORIGUAL expr 
+-- On MAIOR reduce production expr -> expr MENORIGUAL expr 
+-- On IGUAL reduce production expr -> expr MENORIGUAL expr 
+-- On FPAR reduce production expr -> expr MENORIGUAL expr 
+-- On EOF reduce production expr -> expr MENORIGUAL expr 
+-- On ELOG reduce production expr -> expr MENORIGUAL expr 
+-- On DIFER reduce production expr -> expr MENORIGUAL expr 
+
+State 21:
+expr -> expr MAIS . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 22
+
+State 22:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr MAIS expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On DIV shift to state 17
+-- On OULOG reduce production expr -> expr MAIS expr 
+-- On MENOS reduce production expr -> expr MAIS expr 
+-- On MENORIGUAL reduce production expr -> expr MAIS expr 
+-- On MENOR reduce production expr -> expr MAIS expr 
+-- On MAIS reduce production expr -> expr MAIS expr 
+-- On MAIORIGUAL reduce production expr -> expr MAIS expr 
+-- On MAIOR reduce production expr -> expr MAIS expr 
+-- On IGUAL reduce production expr -> expr MAIS expr 
+-- On FPAR reduce production expr -> expr MAIS expr 
+-- On EOF reduce production expr -> expr MAIS expr 
+-- On ELOG reduce production expr -> expr MAIS expr 
+-- On DIFER reduce production expr -> expr MAIS expr 
+
+State 23:
+expr -> expr MENOR . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 24
+
+State 24:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr MENOR expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On MENOS shift to state 15
+-- On MAIS shift to state 21
+-- On DIV shift to state 17
+-- On OULOG reduce production expr -> expr MENOR expr 
+-- On MENORIGUAL reduce production expr -> expr MENOR expr 
+-- On MENOR reduce production expr -> expr MENOR expr 
+-- On MAIORIGUAL reduce production expr -> expr MENOR expr 
+-- On MAIOR reduce production expr -> expr MENOR expr 
+-- On IGUAL reduce production expr -> expr MENOR expr 
+-- On FPAR reduce production expr -> expr MENOR expr 
+-- On EOF reduce production expr -> expr MENOR expr 
+-- On ELOG reduce production expr -> expr MENOR expr 
+-- On DIFER reduce production expr -> expr MENOR expr 
+
+State 25:
+expr -> expr MAIORIGUAL . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 26
+
+State 26:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr MAIORIGUAL expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On MENOS shift to state 15
+-- On MAIS shift to state 21
+-- On DIV shift to state 17
+-- On OULOG reduce production expr -> expr MAIORIGUAL expr 
+-- On MENORIGUAL reduce production expr -> expr MAIORIGUAL expr 
+-- On MENOR reduce production expr -> expr MAIORIGUAL expr 
+-- On MAIORIGUAL reduce production expr -> expr MAIORIGUAL expr 
+-- On MAIOR reduce production expr -> expr MAIORIGUAL expr 
+-- On IGUAL reduce production expr -> expr MAIORIGUAL expr 
+-- On FPAR reduce production expr -> expr MAIORIGUAL expr 
+-- On EOF reduce production expr -> expr MAIORIGUAL expr 
+-- On ELOG reduce production expr -> expr MAIORIGUAL expr 
+-- On DIFER reduce production expr -> expr MAIORIGUAL expr 
+
+State 27:
+expr -> expr MAIOR . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 28
+
+State 28:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr MAIOR expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On MENOS shift to state 15
+-- On MAIS shift to state 21
+-- On DIV shift to state 17
+-- On OULOG reduce production expr -> expr MAIOR expr 
+-- On MENORIGUAL reduce production expr -> expr MAIOR expr 
+-- On MENOR reduce production expr -> expr MAIOR expr 
+-- On MAIORIGUAL reduce production expr -> expr MAIOR expr 
+-- On MAIOR reduce production expr -> expr MAIOR expr 
+-- On IGUAL reduce production expr -> expr MAIOR expr 
+-- On FPAR reduce production expr -> expr MAIOR expr 
+-- On EOF reduce production expr -> expr MAIOR expr 
+-- On ELOG reduce production expr -> expr MAIOR expr 
+-- On DIFER reduce production expr -> expr MAIOR expr 
+
+State 29:
+expr -> expr IGUAL . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 30
+
+State 30:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr IGUAL expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On MENOS shift to state 15
+-- On MENORIGUAL shift to state 19
+-- On MENOR shift to state 23
+-- On MAIS shift to state 21
+-- On MAIORIGUAL shift to state 25
+-- On MAIOR shift to state 27
+-- On DIV shift to state 17
+-- On OULOG reduce production expr -> expr IGUAL expr 
+-- On IGUAL reduce production expr -> expr IGUAL expr 
+-- On FPAR reduce production expr -> expr IGUAL expr 
+-- On EOF reduce production expr -> expr IGUAL expr 
+-- On ELOG reduce production expr -> expr IGUAL expr 
+-- On DIFER reduce production expr -> expr IGUAL expr 
+
+State 31:
+expr -> expr ELOG . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 32
+
+State 32:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr ELOG expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On MENOS shift to state 15
+-- On MENORIGUAL shift to state 19
+-- On MENOR shift to state 23
+-- On MAIS shift to state 21
+-- On MAIORIGUAL shift to state 25
+-- On MAIOR shift to state 27
+-- On IGUAL shift to state 29
+-- On DIV shift to state 17
+-- On DIFER shift to state 33
+-- On OULOG reduce production expr -> expr ELOG expr 
+-- On FPAR reduce production expr -> expr ELOG expr 
+-- On EOF reduce production expr -> expr ELOG expr 
+-- On ELOG reduce production expr -> expr ELOG expr 
+
+State 33:
+expr -> expr DIFER . expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On NOT shift to state 1
+-- On LITSTRING shift to state 2
+-- On LITINT shift to state 3
+-- On LITFLOAT shift to state 4
+-- On LITCHAR shift to state 5
+-- On LITBOOL shift to state 6
+-- On ID shift to state 7
+-- On APAR shift to state 8
+-- On variavel shift to state 9
+-- On expr shift to state 34
+
+State 34:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr DIFER expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On MENOS shift to state 15
+-- On MENORIGUAL shift to state 19
+-- On MENOR shift to state 23
+-- On MAIS shift to state 21
+-- On MAIORIGUAL shift to state 25
+-- On MAIOR shift to state 27
+-- On DIV shift to state 17
+-- On OULOG reduce production expr -> expr DIFER expr 
+-- On IGUAL reduce production expr -> expr DIFER expr 
+-- On FPAR reduce production expr -> expr DIFER expr 
+-- On EOF reduce production expr -> expr DIFER expr 
+-- On ELOG reduce production expr -> expr DIFER expr 
+-- On DIFER reduce production expr -> expr DIFER expr 
+
+State 35:
+expr -> APAR expr FPAR . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES reduce production expr -> APAR expr FPAR 
+-- On OULOG reduce production expr -> APAR expr FPAR 
+-- On MENOS reduce production expr -> APAR expr FPAR 
+-- On MENORIGUAL reduce production expr -> APAR expr FPAR 
+-- On MENOR reduce production expr -> APAR expr FPAR 
+-- On MAIS reduce production expr -> APAR expr FPAR 
+-- On MAIORIGUAL reduce production expr -> APAR expr FPAR 
+-- On MAIOR reduce production expr -> APAR expr FPAR 
+-- On IGUAL reduce production expr -> APAR expr FPAR 
+-- On FPAR reduce production expr -> APAR expr FPAR 
+-- On EOF reduce production expr -> APAR expr FPAR 
+-- On ELOG reduce production expr -> APAR expr FPAR 
+-- On DIV reduce production expr -> APAR expr FPAR 
+-- On DIFER reduce production expr -> APAR expr FPAR 
+
+State 36:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> NOT expr . [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL FPAR EOF ELOG DIV DIFER ]
+-- On VEZES shift to state 11
+-- On MENOS shift to state 15
+-- On MAIS shift to state 21
+-- On DIV shift to state 17
+-- On OULOG reduce production expr -> NOT expr 
+-- On MENORIGUAL reduce production expr -> NOT expr 
+-- On MENOR reduce production expr -> NOT expr 
+-- On MAIORIGUAL reduce production expr -> NOT expr 
+-- On MAIOR reduce production expr -> NOT expr 
+-- On IGUAL reduce production expr -> NOT expr 
+-- On FPAR reduce production expr -> NOT expr 
+-- On EOF reduce production expr -> NOT expr 
+-- On ELOG reduce production expr -> NOT expr 
+-- On DIFER reduce production expr -> NOT expr 
+
+State 37:
+prog' -> prog . [ # ]
+-- On # accept prog
+
+State 38:
+expr -> expr . OULOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . ELOG expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . IGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . DIFER expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . MAIOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . MENOR expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . MAIORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . MENORIGUAL expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . MAIS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . MENOS expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . VEZES expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+expr -> expr . DIV expr [ VEZES OULOG MENOS MENORIGUAL MENOR MAIS MAIORIGUAL MAIOR IGUAL EOF ELOG DIV DIFER ]
+prog -> expr . EOF [ # ]
+-- On VEZES shift to state 11
+-- On OULOG shift to state 13
+-- On MENOS shift to state 15
+-- On MENORIGUAL shift to state 19
+-- On MENOR shift to state 23
+-- On MAIS shift to state 21
+-- On MAIORIGUAL shift to state 25
+-- On MAIOR shift to state 27
+-- On IGUAL shift to state 29
+-- On EOF shift to state 39
+-- On ELOG shift to state 31
+-- On DIV shift to state 17
+-- On DIFER shift to state 33
+
+State 39:
+prog -> expr EOF . [ # ]
+-- On # reduce production prog -> expr EOF 
+

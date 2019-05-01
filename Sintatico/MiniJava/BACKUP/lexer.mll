@@ -124,7 +124,7 @@ rule token = parse
 | ')'                                   { FPAR }
 | '['                                   { ACOL }
 | ']'                                   { FCOL }
-| "import"                              { IMPORT }
+(*| "import"                              { IMPORT }*)
 | "+="                                  { MAISIGUAL }
 | "-="                                  { MENOSIGUAL }
 | "*="                                  { VEZESIGUAL }
