@@ -1,5 +1,17 @@
 
-type comandos = comando list
+type programa = Programa of declaracoes * comandos 
+and comandos = comando list
+
+and declaracoes = declaracao list
+
+and declaracao = DecVar of string * tipo
+
+and tipo = Int
+         | String
+         | Float
+         | Char
+         | Bool
+         | Void
 
 and comando = CmdIncr of expressao
             | CmdDecr of expressao

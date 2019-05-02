@@ -1,7 +1,6 @@
 
 %{
 open Ast
-
 %}
 
 %token <int> INT

@@ -77,12 +77,12 @@
 %left MAIS MENOS
 %left VEZES DIV
 
-%start <Ast.comandos> programa
+%start <Ast.programa> programa
 
 %%
 
 (* Representa o programa como um todo. *)
-programa : cs=comandos EOF { cs }
+programa : ds=declaracao*; cs=comandos EOF { Programa (List.flatten ds, cs) }
 	     ;
 
 (* Comandos da linguagem *)
@@ -175,4 +175,14 @@ expr :
 variavel :
      	 | x=ID { ExpVar x }
          ;
+
+declaracao : t=tipo; ids=separated_nonempty_list(VIRG, ID); PTV { List.map (fun id -> DecVar (id, t)) ids }
+           ;
+
+tipo : INT { Int }
+     | STRING { String }
+     | FLOAT { Float }
+     | CHAR { Char }
+     | BOOLEAN { Bool }
+     | VOID { Void }
 
