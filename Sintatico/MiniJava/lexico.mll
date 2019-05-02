@@ -80,6 +80,7 @@ rule token = parse
 | "public"                              { PUBLIC }
 | "char"                                { CHAR }
 | "boolean"                             { BOOLEAN }
+| "default"                             { DEFAULT }
 | "class"                               { CLASS }
 | "static"                              { STATIC }
 | "void"                                { VOID }

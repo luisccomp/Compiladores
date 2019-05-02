@@ -1,6 +1,7 @@
-if (x == 3) {
-	System.out.printf("numero: %d\n", x - 1);
-}
-else {
-	System.out.printf("numero: %d\n", 0);
+switch (n) {
+	case 1: System.out.printf("UM");
+			break;
+	case 2: System.out.printf("DOIS");
+			break;
+	default:
 }

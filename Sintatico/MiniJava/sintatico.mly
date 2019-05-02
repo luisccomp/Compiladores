@@ -49,6 +49,7 @@
 %token MENOSMENOS
 %token DPTOS
 %token SWITCH
+%token DEFAULT
 %token CASE
 %token BREAK
 %token CHAR
@@ -86,15 +87,23 @@ programa : cs=comandos EOF { cs }
 
 (* Comandos da linguagem *)
 comandos : { [] }
-         | c=comando; cs=comandos { c :: cs }
+         | c=comando; PTV; cs=comandos { c :: cs } (* Comando com terminador ';' *)
+         | c=comando_s; cs=comandos {c :: cs }     (* Comando sem terminador ';' *)
          ;
 
 comando : c=cmd_print { c }
-        | c=cmd_if { c }
+        | c=cmd_incr { c }
+        | c=cmd_decr { c }
         | c=cmd_atrib { c }
         ;
 
-cmd_print : PRINT APAR args=argumentos FPAR PTV { CmdPrint args }
+comando_s : c=cmd_if { c }
+	      | c=cmd_while { c }
+          | c=cmd_for { c }
+          | c=cmd_switch { c }
+          ;
+
+cmd_print : PRINT APAR args=argumentos FPAR { CmdPrint args }
           ;
 
 argumentos : se=seq_expr { se }
@@ -105,15 +114,38 @@ seq_expr : { [] }
          | e=expr; VIRG; se=seq_expr { e :: se }
          ;
 
+cmd_incr : x=ID; MAISMAIS { CmdIncr (ExpVar x) }
+         ;
+
+cmd_decr : x=ID; MENOSMENOS { CmdDecr (ExpVar x) }
+         ;
+
 cmd_if : IF APAR; e=expr; FPAR ACHAVE; cs=comandos; FCHAVE; pe=parte_else { CmdIf (e, cs, pe) }
        ;
+
+cmd_while : WHILE APAR; e=expr; FPAR ACHAVE; cs=comandos; FCHAVE { CmdWhile (e, cs) }
+          ;
+
+cmd_for : FOR APAR; ca=cmd_atrib; PTV; e=expr; PTV; c=comando FPAR ACHAVE; cs=comandos; FCHAVE { CmdFor (ca, e, c, cs) }
+        ;
+
+cmd_switch : SWITCH APAR; e=expr; FPAR ACHAVE; cs=cases; d=default; FCHAVE { CmdSwitch(e, cs, Some d) }
+           ;
+
+cases : { [] }
+      | c=case; cs=cases; { c :: cs }
+      ;
+
+case : CASE; e=expr; DPTOS; cs=comandos; BREAK PTV { Case (e, cs) }
+
+default: DEFAULT DPTOS; cs=comandos { Default cs }
 
 parte_else: { None }
           | ELSE ACHAVE; cs=comandos; FCHAVE { Some cs }
           | ELSE; c=cmd_if { Some [c] }
           ;
 
-cmd_atrib : x=ID; ATRIB; e=expr PTV { CmdAtrib (ExpVar x, e) }
+cmd_atrib : x=ID; ATRIB; e=expr { CmdAtrib (ExpVar x, e) }
 
 (* Tratando as expressoes que podem aparecer na minha mini linguagem. *)
 expr :
