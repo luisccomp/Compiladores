@@ -13,7 +13,6 @@
 %token ATRIB
 %token IF
 %token WHILE
-%token MAIN
 %token MAIS
 %token PUBLIC
 %token CLASS
@@ -128,6 +127,7 @@ comando_s : c=cmd_if { c }
 cmd_print : PRINT APAR args=argumentos FPAR { CmdPrint args }
           ;
 
+(* Lista de argumentos de funcoes/comandos *)
 argumentos : se=seq_expr { se }
            ;
 
@@ -172,6 +172,25 @@ parte_else: { None }
           ;
 
 cmd_atrib : x=ID; ATRIB; e=expr { CmdAtrib (ExpVar x, e) }
+          | x=ID; ATRIB READINT { CmdReadInt (ExpVar x) }
+          | x=ID; ATRIB READFLOAT { CmdReadFloat (ExpVar x) }
+          | x=ID; ATRIB READSTRING { CmdReadString (ExpVar x) }
+          | x=ID; ATRIB READCHAR { CmdReadChar (ExpVar x) }
+          ;
+
+(*cmd_readint : READINT { CmdReadInt }
+            ;
+
+cmd_readfloat : READFLOAT { CmdReadFloat }
+              ;
+
+cmd_readstring : READSTRING { CmdReadString }
+               ;
+
+cmd_readchar : READCHAR { CmdReadChar }*)
+
+cmd_fun : x=ID; APAR; args=argumentos; FPAR { CmdFun (x, args) }
+        ;
 
 (* Tratando as expressoes que podem aparecer na minha mini linguagem. *)
 expr :
@@ -190,12 +209,13 @@ expr :
      | e1=expr; MENOR; e2=expr { ExpBin(Menor, e1, e2) }
      | e1=expr; MAIORIGUAL; e2=expr { ExpBin(MaiorIgual, e1, e2) }
      | e1=expr; MENORIGUAL; e2=expr { ExpBin(MenorIgual, e1, e2) }
-     | NOT e=expr { ExpUn(Not, e) }
+     | NOT; e=expr { ExpUn(Not, e) }
      | e1=expr; MAIS; e2=expr { ExpBin(Soma, e1, e2) }
      | e1=expr; MENOS; e2=expr { ExpBin(Sub, e1, e2) }
      | e1=expr; VEZES; e2=expr { ExpBin(Mult, e1, e2) }
      | e1=expr; DIV; e2=expr { ExpBin(Div, e1, e2) }
      | e1=expr; MOD; e2=expr { ExpBin(Mod, e1, e2) }
+     | x=ID; APAR; args=argumentos; FPAR { ExpFun (x, args) }
      ;
 
 (* Trata as variaveis do programa *)
@@ -212,4 +232,5 @@ tipo : INT { Int }
      | CHAR { Char }
      | BOOLEAN { Bool }
      | VOID { Void }
+     ;
 

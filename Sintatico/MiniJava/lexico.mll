@@ -66,9 +66,7 @@ rule token = parse
 | ')'                                   { FPAR }
 | '['                                   { ACOL }
 | ']'                                   { FCOL }
-(*| "import"                              { IMPORT }*)
-| "String[] args"                       { ARGV }
-| "main"                                { MAIN }
+| "String[] args"                       { token lexbuf }
 | "+="                                  { MAISIGUAL }
 | "-="                                  { MENOSIGUAL }
 | "*="                                  { VEZESIGUAL }

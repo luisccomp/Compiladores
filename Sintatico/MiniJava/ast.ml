@@ -31,6 +31,10 @@ and comando = CmdIncr of expressao
             | CmdSwitch of expressao * cases * default option
             | CmdAtrib of expressao * expressao
             | CmdReturn of expressao option
+            | CmdReadInt of expressao
+            | CmdReadFloat of expressao
+            | CmdReadString of expressao
+            | CmdReadChar of expressao
 
 and cases = case list
 
@@ -47,6 +51,7 @@ and expressao = ExpInt of int
               | ExpBool of bool
               | ExpBin of operador * expressao * expressao (* Operadores binários *)
               | ExpUn of operador * expressao              (* Operadores unários *)
+              | ExpFun of string * expressao list          (* Chamada de funcao *)
 
 (* Operadores do programa *)
 and operador = Soma
