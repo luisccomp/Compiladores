@@ -60,6 +60,8 @@
 %token BOOLEAN
 %token DIVIGUAL
 %token ARGV
+%token MOD
+%token RETURN
 %token <bool> LITBOOL
 %token <int> LITINT
 %token <string> LITSTRING
@@ -75,15 +77,34 @@
 %left MAIOR MENOR MAIORIGUAL MENORIGUAL
 %left NOT
 %left MAIS MENOS
-%left VEZES DIV
+%left VEZES DIV MOD
 
 %start <Ast.programa> programa
 
 %%
 
 (* Representa o programa como um todo. *)
-programa : ds=declaracao*; cs=comandos EOF { Programa (List.flatten ds, cs) }
-	     ;
+(* programa : ds=declaracao*; cs=comandos EOF { Programa (List.flatten ds, cs) }
+	     ; *)
+
+programa : PUBLIC CLASS ID ACHAVE; fs=funcoes; FCHAVE EOF { Programa fs }
+
+funcoes : { [] }
+        | f=declaracao_funcao; fs=funcoes { f :: fs }
+        ;
+
+
+declaracao_funcao : PUBLIC STATIC; t=tipo; x=ID; APAR; pars=lista_parametros; FPAR ACHAVE; ds=declaracao*; cs=comandos; FCHAVE { DecFun (t, x, pars, List.flatten ds, cs) }
+                  ;
+
+(* Representa os parametros de uma funcao *)
+parametro : t=tipo; x=ID { Parametro (x, t) }
+          ;
+
+lista_parametros : { [] }
+                 | p=parametro { [p] }
+                 | p=parametro; VIRG; ps=lista_parametros { p :: ps }
+                 ;
 
 (* Comandos da linguagem *)
 comandos : { [] }
@@ -95,6 +116,7 @@ comando : c=cmd_print { c }
         | c=cmd_incr { c }
         | c=cmd_decr { c }
         | c=cmd_atrib { c }
+        | c=cmd_return { c }
         ;
 
 comando_s : c=cmd_if { c }
@@ -130,6 +152,10 @@ cmd_for : FOR APAR; ca=cmd_atrib; PTV; e=expr; PTV; c=comando FPAR ACHAVE; cs=co
         ;
 
 cmd_switch : SWITCH APAR; e=expr; FPAR ACHAVE; cs=cases; d=default; FCHAVE { CmdSwitch(e, cs, Some d) }
+           ;
+
+cmd_return : RETURN { CmdReturn None }
+           | RETURN; e=expr { CmdReturn (Some e) }
            ;
 
 cases : { [] }
@@ -169,6 +195,7 @@ expr :
      | e1=expr; MENOS; e2=expr { ExpBin(Sub, e1, e2) }
      | e1=expr; VEZES; e2=expr { ExpBin(Mult, e1, e2) }
      | e1=expr; DIV; e2=expr { ExpBin(Div, e1, e2) }
+     | e1=expr; MOD; e2=expr { ExpBin(Mod, e1, e2) }
      ;
 
 (* Trata as variaveis do programa *)

@@ -1,10 +1,19 @@
 
-type programa = Programa of declaracoes * comandos 
+(* type programa = Programa of declaracoes * comandos *)
+type programa = Programa of funcoes
 and comandos = comando list
 
 and declaracoes = declaracao list
 
 and declaracao = DecVar of string * tipo
+
+and parametro = Parametro of string * tipo
+
+and parametros = parametro list
+
+and declaracao_funcao = DecFun of tipo * string * parametros * declaracoes * comandos
+
+and funcoes = declaracao_funcao list
 
 and tipo = Int
          | String
@@ -21,6 +30,7 @@ and comando = CmdIncr of expressao
             | CmdFor of comando * expressao * comando * comandos
             | CmdSwitch of expressao * cases * default option
             | CmdAtrib of expressao * expressao
+            | CmdReturn of expressao option
 
 and cases = case list
 
@@ -32,24 +42,25 @@ and default = Default of comandos
 and expressao = ExpInt of int
               | ExpVar of string
               | ExpFloat of float
-			  | ExpChar of char
-			  | ExpString of string
-			  | ExpBool of bool
-			  | ExpBin of operador * expressao * expressao (* Operadores binários *)
-			  | ExpUn of operador * expressao              (* Operadores unários *)
+              | ExpChar of char
+              | ExpString of string
+              | ExpBool of bool
+              | ExpBin of operador * expressao * expressao (* Operadores binários *)
+              | ExpUn of operador * expressao              (* Operadores unários *)
 
 (* Operadores do programa *)
 and operador = Soma
              | Sub
-	         | Mult
+             | Mult
              | Div
-	      	 | Maior
-			 | Menor
-			 | MaiorIgual
-			 | MenorIgual
+             | Maior
+             | Menor
+             | MaiorIgual
+             | MenorIgual
              | Igual
-			 | Difer
-			 | Ou
-			 | E
-			 | Not
+             | Difer
+             | Ou
+             | E
+             | Not
+             | Mod
 

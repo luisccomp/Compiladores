@@ -78,8 +78,10 @@ rule token = parse
 | '+'                                   { MAIS }
 | '='                                   { ATRIB }
 | "public"                              { PUBLIC }
+| "%"                                   { MOD }
 | "char"                                { CHAR }
 | "boolean"                             { BOOLEAN }
+| "return"                              { RETURN }
 | "default"                             { DEFAULT }
 | "class"                               { CLASS }
 | "static"                              { STATIC }
