@@ -149,27 +149,27 @@ cmd_atrib : x=ID; ATRIB; e=expr { CmdAtrib (ExpVar x, e) }
 
 (* Tratando as expressoes que podem aparecer na minha mini linguagem. *)
 expr :
-	 | v=variavel { v }
+     | v=variavel { v }
      | i=LITINT { ExpInt i }
      | f=LITFLOAT { ExpFloat f }
-	 | b=LITBOOL { ExpBool b }
-	 | s=LITSTRING { ExpString s }
-	 | c=LITCHAR { ExpChar c }
-	 | APAR; e=expr; FPAR { e }
-	 | e1=expr; OULOG; e2=expr { ExpBin(Ou, e1, e2) }
-	 | e1=expr; ELOG; e2=expr { ExpBin(E, e1, e2) }
-	 | e1=expr; IGUAL; e2=expr { ExpBin(Igual, e1, e2) }
-	 | e1=expr; DIFER; e2=expr { ExpBin(Difer, e1, e2) }
-	 | e1=expr; MAIOR; e2=expr { ExpBin(Maior, e1, e2) }
-	 | e1=expr; MENOR; e2=expr { ExpBin(Menor, e1, e2) }
-	 | e1=expr; MAIORIGUAL; e2=expr { ExpBin(MaiorIgual, e1, e2) }
-	 | e1=expr; MENORIGUAL; e2=expr { ExpBin(MenorIgual, e1, e2) }
-	 | NOT e=expr { ExpUn(Not, e) }
-	 | e1=expr; MAIS; e2=expr { ExpBin(Soma, e1, e2) }
-	 | e1=expr; MENOS; e2=expr { ExpBin(Sub, e1, e2) }
-	 | e1=expr; VEZES; e2=expr { ExpBin(Mult, e1, e2) }
-	 | e1=expr; DIV; e2=expr { ExpBin(Div, e1, e2) }
-	 ;
+     | b=LITBOOL { ExpBool b }
+     | s=LITSTRING { ExpString s }
+     | c=LITCHAR { ExpChar c }
+     | APAR; e=expr; FPAR { e }
+     | e1=expr; OULOG; e2=expr { ExpBin(Ou, e1, e2) }
+     | e1=expr; ELOG; e2=expr { ExpBin(E, e1, e2) }
+     | e1=expr; IGUAL; e2=expr { ExpBin(Igual, e1, e2) }
+     | e1=expr; DIFER; e2=expr { ExpBin(Difer, e1, e2) }
+     | e1=expr; MAIOR; e2=expr { ExpBin(Maior, e1, e2) }
+     | e1=expr; MENOR; e2=expr { ExpBin(Menor, e1, e2) }
+     | e1=expr; MAIORIGUAL; e2=expr { ExpBin(MaiorIgual, e1, e2) }
+     | e1=expr; MENORIGUAL; e2=expr { ExpBin(MenorIgual, e1, e2) }
+     | NOT e=expr { ExpUn(Not, e) }
+     | e1=expr; MAIS; e2=expr { ExpBin(Soma, e1, e2) }
+     | e1=expr; MENOS; e2=expr { ExpBin(Sub, e1, e2) }
+     | e1=expr; VEZES; e2=expr { ExpBin(Mult, e1, e2) }
+     | e1=expr; DIV; e2=expr { ExpBin(Div, e1, e2) }
+     ;
 
 (* Trata as variaveis do programa *)
 variavel :
