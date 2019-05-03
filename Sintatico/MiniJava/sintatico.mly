@@ -98,7 +98,7 @@ comando : c=cmd_print { c }
         ;
 
 comando_s : c=cmd_if { c }
-	      | c=cmd_while { c }
+          | c=cmd_while { c }
           | c=cmd_for { c }
           | c=cmd_switch { c }
           ;
