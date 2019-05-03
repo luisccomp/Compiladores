@@ -21,6 +21,8 @@ public class Teste {
         // Atribuindo um valor inteiro a uma variavel
         x = Integer.parseInt(s.nextLine());
         b = ePar(x);
+
+        for (x = 0; x < 10; x += 1) {}
     }
 }
 

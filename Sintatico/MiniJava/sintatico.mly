@@ -176,21 +176,11 @@ cmd_atrib : x=ID; ATRIB; e=expr { CmdAtrib (ExpVar x, e) }
           | x=ID; ATRIB READFLOAT { CmdReadFloat (ExpVar x) }
           | x=ID; ATRIB READSTRING { CmdReadString (ExpVar x) }
           | x=ID; ATRIB READCHAR { CmdReadChar (ExpVar x) }
+          | x=ID; MAISIGUAL; e=expr { CmdMaisIgual (ExpVar x, e) }
+          | x=ID; MENOSIGUAL; e=expr { CmdMenosIgual (ExpVar x, e) }
+          | x=ID; VEZESIGUAL; e=expr { CmdVezesIgual (ExpVar x, e) }
+          | x=ID; DIVIGUAL; e=expr { CmdDivIgual (ExpVar x, e) }
           ;
-
-(*cmd_readint : READINT { CmdReadInt }
-            ;
-
-cmd_readfloat : READFLOAT { CmdReadFloat }
-              ;
-
-cmd_readstring : READSTRING { CmdReadString }
-               ;
-
-cmd_readchar : READCHAR { CmdReadChar }*)
-
-cmd_fun : x=ID; APAR; args=argumentos; FPAR { CmdFun (x, args) }
-        ;
 
 (* Tratando as expressoes que podem aparecer na minha mini linguagem. *)
 expr :

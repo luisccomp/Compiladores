@@ -35,6 +35,10 @@ and comando = CmdIncr of expressao
             | CmdReadFloat of expressao
             | CmdReadString of expressao
             | CmdReadChar of expressao
+            | CmdMaisIgual of expressao * expressao
+            | CmdMenosIgual of expressao * expressao
+            | CmdVezesIgual of expressao * expressao
+            | CmdDivIgual of expressao * expressao
 
 and cases = case list
 
