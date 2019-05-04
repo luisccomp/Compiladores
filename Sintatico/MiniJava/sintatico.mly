@@ -78,13 +78,11 @@
 %left MAIS MENOS
 %left VEZES DIV MOD
 
+%nonassoc UMENOS
+
 %start <Ast.programa> programa
 
 %%
-
-(* Representa o programa como um todo. *)
-(* programa : ds=declaracao*; cs=comandos EOF { Programa (List.flatten ds, cs) }
-	     ; *)
 
 programa : PUBLIC CLASS ID ACHAVE; fs=funcoes; FCHAVE EOF { Programa fs }
 
@@ -206,6 +204,7 @@ expr :
      | e1=expr; DIV; e2=expr { ExpBin(Div, e1, e2) }
      | e1=expr; MOD; e2=expr { ExpBin(Mod, e1, e2) }
      | x=ID; APAR; args=argumentos; FPAR { ExpFun (x, args) }
+     | MENOS; e=expr %prec UMENOS { ExpUMenos e }
      ;
 
 (* Trata as variaveis do programa *)

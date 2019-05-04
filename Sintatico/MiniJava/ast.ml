@@ -56,6 +56,7 @@ and expressao = ExpInt of int
               | ExpBin of operador * expressao * expressao (* Operadores binários *)
               | ExpUn of operador * expressao              (* Operadores unários *)
               | ExpFun of string * expressao list          (* Chamada de funcao *)
+              | ExpUMenos of expressao                     (* Operador menos unário *)
 
 (* Operadores do programa *)
 and operador = Soma

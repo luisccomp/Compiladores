@@ -5,10 +5,12 @@ public class Nano12 {
         m = 2;
         x = 5;
         while(x>n){
-            if(n==m)
+            if(n==m) {
                 System.out.printf("%d\n", n);
-            else
+            }
+            else {
                 System.out.printf("%d\n", 0);
+            }
             x = x - 1;
         }
     }
