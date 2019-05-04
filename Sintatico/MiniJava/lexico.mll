@@ -1,11 +1,11 @@
 {
-	open Lexing
-	open Sintatico (* Adicionando o modulo sintatico. Os tokens da mini
+    open Lexing
+    open Sintatico (* Adicionando o modulo sintatico. Os tokens da mini
                       linguagem serão declarados aqui. *)
-	open Printf
+    open Printf
 
 
-	(* Incrmenta o contador de linha do analisador léxico para controlar qual
+    (* Incrmenta o contador de linha do analisador léxico para controlar qual
        linha ele está analisando no presente momento. *)
     let incr_num_linha lexbuf =
         let pos = lexbuf.lex_curr_p in
