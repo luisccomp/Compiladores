@@ -5,6 +5,10 @@
     open Printf
 
 
+    (* Exceptions para erro léxico *)
+    exception Erro of string
+
+
     (* Incrmenta o contador de linha do analisador léxico para controlar qual
        linha ele está analisando no presente momento. *)
     let incr_num_linha lexbuf =
@@ -26,7 +30,8 @@
     (* Cria uma exceção baseada em uma mensagem de erro genérica. *)
     let erro lin col msg =
         let mensagem = sprintf "%d-%d: %s" lin col msg in
-        failwith mensagem
+        (*failwith mensagem*)
+        mensagem
 }
 
 
@@ -131,7 +136,8 @@ rule token = parse
                                           let buffer = Buffer.create 1 in
                                           let str = leia_string lin col buffer lexbuf in
                                           LITSTRING str }
-| _ as c                                { failwith (msg_erro lexbuf c) }
+(*| _ as c                                { failwith (msg_erro lexbuf c) }*)
+| _ as c                                { raise (Erro (msg_erro lexbuf c)) }
 | eof                                   { EOF }
 and leia_string lin col buffer = parse
   '"'                                   { Buffer.contents buffer }
@@ -145,7 +151,8 @@ and leia_string lin col buffer = parse
                                           leia_string lin col buffer lexbuf }
 | _ as c                                { Buffer.add_char buffer c;
                                           leia_string lin col buffer lexbuf }
-| eof                                   { erro lin col "A string nao foi fechada" }
+(*| eof                                   { erro lin col "A string nao foi fechada" }*)
+| eof                                   { raise (Erro (erro lin col "A string nao foi fechada")) }
 and comentario_bloco lin col n = parse
   "*/"                                  { if n=0 then token lexbuf
                                           else comentario_bloco lin col (n-1) lexbuf }
@@ -156,6 +163,6 @@ and comentario_bloco lin col n = parse
 | novalinha                             { incr_num_linha lexbuf;
                                           comentario_bloco lin col n lexbuf }
 | _                                     { comentario_bloco lin col n lexbuf }
-| eof                                   { erro lin col "Comentario bloco nao fechado" }
-
+(*| eof                                   { erro lin col "Comentario bloco nao fechado" }*)
+| eof                                   { raise (Erro (erro lin col "A string nao foi fechada")) }
 
