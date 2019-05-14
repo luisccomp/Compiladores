@@ -12,7 +12,7 @@ module I = Sintatico.MenhirInterpreter
 let posicao lexbuf =
     let pos = lexbuf.lex_curr_p in
     let lin = pos.pos_lnum
-    and col = pos.pos_cnum - pos.pos_bol - 1 in
+    and col = pos.pos_cnum - pos.pos_bol + 1 in
     sprintf "linha %d, coluna %d" lin col
 
 (* [pilha checkpoint] extrai a pilha do autômato LR(1) contida em checkpoint *)

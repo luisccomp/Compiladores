@@ -7,230 +7,230 @@ let message =
   fun s ->
     match s with
     | 0 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (0). Exemplo: public class Exemplo { }\n"
     | 1 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (1). Exemplo: public class Exemplo { }\n"
     | 2 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (2). Exemplo: public class Exemplo { }\n"
     | 3 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (3). Exemplo: public class Exemplo { }\n"
     | 4 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (4). Exemplo: public class Exemplo { }\n"
     | 5 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (5). Esperava \"public static tipo nome ( params ) {}\".\n"
     | 6 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (6). Esperava \"public static tipo nome ( params ) {}\".\n"
     | 13 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (13). Esperava \"public static tipo nome ( params ) {}\".\n"
     | 14 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (14). Esperava \"public static tipo nome ( params ) {}\".\n"
     | 15 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (15). Esperava \"public static tipo nome ( params ) {}\".\n"
     | 16 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: Tipo mal declarado (16). Esperava \"tipo identificador\".\n"
     | 18 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Esperava \")\" ap\195\179s declara\195\167\195\163o de par\195\162metros.\n"
     | 19 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: Ap\195\179s \",\" esperava outro par\195\162metro do tipo \"tipo identificador\".\n"
     | 22 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: faltou o corpo da fun\195\167\195\163o.\n"
     | 31 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\".\n"
     | 32 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\".\n"
     | 80 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\".\n"
     | 81 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando while mal declarado, Faltou o corpo do while. Esperava \"while (express\195\163o) { comandos... }\".\n"
     | 82 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\". O comando while n\195\163o foi fechado.\n"
     | 164 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\". O comando while n\195\163o foi fechado.\n"
     | 131 ->
         "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
     | 24 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: faltou o tipo das vari\195\161veis.\n"
     | 25 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou \";\" ap\195\179s declara\195\167\195\163o dos tipos.\n"
     | 26 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: ap\195\179s \",\" esperava outro identificador para vari\195\161vel.\n"
     | 168 ->
         "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
     | 23 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Fun\195\167\195\163o n\195\163o fechada.\n"
     | 83 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando switch mal declarado. Esperava \"switch (expressao) { cases }\".\n"
     | 84 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando switch mal declarado. Esperava \"switch (expressao) { cases }\".\n"
     | 85 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando switch mal declarado. Esperava \"switch (expressao) { cases }\".\n"
     | 86 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: faltou o corpo do switch.\n"
     | 87 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: faltou a declara\195\167\195\163o dos cases.\n"
     | 157 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Ap\195\179s default, esperava \":\".\n"
     | 158 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou \";\"?\n"
     | 160 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando switch n\195\163o fechado. Faltou \"}\".\n"
     | 88 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Case mal declarado. Faltou express\195\163o.\n"
     | 89 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou dois pontos ap\195\179s a express\195\163o do case.\n"
     | 90 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Falotu o break ap\195\179s os comandos.\n"
     | 153 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou \"BREAK\"?\n"
     | 154 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou \";\" ap\195\179s o \"break\".\n"
     | 162 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "cases -> case . cases [ DEFAULT ]\n"
     | 91 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Ap\195\179s return, faltou \";\" ou uma express\195\163o.\n"
     | 134 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Ap\195\179s o comando, faltou o \";\".\n"
     | 166 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou fechar a fun\195\167\195\163o.\n"
     | 33 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Ap\195\179s o \"!\", faltou uma express\195\163o.\n"
     | 79 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o inv\195\161lida ap\195\179s o \"!\".\n"
     | 34 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: o operador \"-\" necessita de dois operadores \"op1 - op2\".\n"
     | 92 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o inv\195\161lida ap\195\179s o return.\n"
     | 45 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "O operador \"*\" necessita de dois operadores \"op1 * op2\".\n"
     | 47 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "O operador \"||\" necessita de dois operadores \"op1 || op2\".\n"
     | 48 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Expressao logica invalida.\n"
     | 49 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "O operador \"%%\" necessita de dois operadores \"op1 %% op2\".\n"
     | 51 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "<O operador \"-\" necessita de dois operadores \"op1 - op2\".\n"
     | 52 ->
         "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
     | 55 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "O operador \"<=\" necessita de dois operadores \"op1 <= op2\".\n"
     | 56 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Expressao invalida.\n"
     | 59 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou outra express\195\163o.\n"
     | 60 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Expressao invalida.\n"
     | 57 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Expressao invalida.\n"
     | 58 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Expressao invalida.\n"
     | 61 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "O operador \">=\" espera dois operadores. \"a >= b\".\n"
     | 62 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Exp invalida.\n"
     | 63 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Operador \">\" esperava dois operadores \"a > b\".\n"
     | 64 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o inv\195\161lida.\n"
     | 65 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "O operador \"==\" recebe dois operadores. \"a == b\".\n"
     | 66 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o inv\195\161lida.\n"
     | 67 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Operador \"&&\" recebe dois operadores. \"a && b\".\n"
     | 68 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Expressao invalida.\n"
     | 53 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "O operador \"/\" recebe dois operadores \"a / b\".\n"
     | 69 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "O operador \"!=\" recebe dois operadores \"a != b\".\n"
     | 70 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o inv\195\161lida ap\195\179s \"!=\".\n"
     | 40 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Chamada de fun\195\167\195\163o inv\195\161lida. Faltou os par\195\162metros \"id( parametros )\".\n"
     | 41 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Chamada de fun\195\167\195\163o inv\195\161lida. Os par\195\162metros s\195\163o separados por \",\".\n"
     | 133 ->
         "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
     | 42 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou \")\" ap\195\179s a express\195\163o.\n"
     | 44 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o inv\195\161lida antes de \")\".\n"
     | 93 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando print mal declarado.\n"
     | 94 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando print mal declarado. Faltou os parametros.\n"
     | 73 ->
         "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
     | 74 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou outra espress\195\163o \",\".\n"
     | 97 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou \"(\" ap\195\179s o comando \"if\".\n"
     | 98 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando \"if\" mal declarado. Faltou express\195\163o.\n"
     | 99 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o mal declarada.\n"
     | 100 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou o corpo do if.\n"
     | 101 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou fechar o comando if com \"}\".\n"
     | 145 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou fechar o comando if com \"}\" (2).\n"
     | 146 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro desconhecido parte else.\n"
     | 147 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou o corpo do else ou declara\195\167\195\163o de if.\n"
     | 148 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou fechar o comando else.\n"
     | 149 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou o \"}\" do comando else.\n"
     | 102 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Identificador fora de express\195\163o.\n"
     | 103 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou express\195\163o ap\195\179s \"*=\".\n"
     | 104 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o mal delcarada ap\195\179s \"*=\".\n"
     | 106 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou express\195\163o ap\195\179s \"-=\".\n"
     | 107 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o invalida ap\195\179s \"-=\".\n"
     | 109 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou express\195\163o \"+=\".\n"
     | 110 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o mal formada.\n"
     | 111 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou express\195\163o ap\195\179s \"/=\".\n"
     | 112 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o invalida apos \"/=\".\n"
     | 113 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou express\195\163o ap\195\179s atribui\195\167\195\163o \"=\".\n"
     | 118 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o mal formada ap\195\179s \"=\".\n"
     | 119 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando for mal formado. Esperafa \"for (inicializacao; expressao; comando) { comandos }\".\n"
     | 120 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando for mal formado Faltou inicializa\195\167\195\163o. Esperafa \"for (inicializacao; expressao; comando) { comandos }\".\n"
     | 121 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando de inicializa\195\167\195\163o mal formado. Deve ser comando de atribui\195\167\195\163o.\n"
     | 123 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou express\195\163o ap\195\179s comando de inicializa\195\167\195\163o.\n"
     | 124 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Express\195\163o mal formada no for.\n"
     | 125 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou o comando para incremento no for.\n"
     | 126 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou o \")\". Esperava \"for (inicializacao; expr; comando) { comandos }\".\n"
     | 127 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou o corpo do for.\n"
     | 128 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "<Faltou fechar o comando for.\n"
     | 129 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Faltou fechar o comando for.\n"
     | 122 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Comando de atribui\195\167\195\163o mal formado. Faltou PTV.\n"
     | 173 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: comandos ou express\195\181es devem ser declarados dentro de fun\195\167\195\181es.\n"
     | 171 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "Erro: nenhuma declara\195\167\195\163o de express\195\163o ou comando deve ser feita ap\195\179s a declara\195\167\195\163o de programa.\n"
     | _ ->
         raise Not_found
