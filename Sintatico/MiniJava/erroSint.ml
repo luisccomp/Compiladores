@@ -7,230 +7,230 @@ let message =
   fun s ->
     match s with
     | 0 ->
-        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (0). Exemplo: public class Exemplo { }\n"
+        "<Defini\195\167\195\163o incorreta de programa. Esperava \"public class ID {}>\n"
     | 1 ->
-        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (1). Exemplo: public class Exemplo { }\n"
+        "<Defini\195\167\195\163o incorreta de programa. Esperava \"public class ID {}>\n"
     | 2 ->
-        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (2). Exemplo: public class Exemplo { }\n"
+        "<Defini\195\167\195\163o incorreta de programa. Esperava \"public class ID {}>\n"
     | 3 ->
-        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (3). Exemplo: public class Exemplo { }\n"
+        "<Defini\195\167\195\163o incorreta de programa. Esperava \"public class ID {}>\n"
     | 4 ->
-        "Erro: Declara\195\167\195\163o de programa inv\195\161lida (4). Exemplo: public class Exemplo { }\n"
+        "<Esperava '}' ou declara\195\167\195\163o de fun\195\167\195\181es.>\n"
     | 5 ->
-        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (5). Esperava \"public static tipo nome ( params ) {}\".\n"
+        "<Declara\195\167\195\163o de fun\195\167\195\163o impr\195\179pria. Esperava \"tipo ID ( parametros ) { comandos [retorno [expressao];] }\">\n"
     | 6 ->
-        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (6). Esperava \"public static tipo nome ( params ) {}\".\n"
+        "<Declara\195\167\195\163o de fun\195\167\195\163o impr\195\179pria. Esperava \"tipo ID ( parametros ) { comandos [retorno [expressao];] }\">\n"
     | 13 ->
-        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (13). Esperava \"public static tipo nome ( params ) {}\".\n"
+        "<<Declara\195\167\195\163o de fun\195\167\195\163o impr\195\179pria. Esperava \"tipo ID ( parametros ) { comandos [retorno [expressao];] }\">\n"
     | 14 ->
-        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (14). Esperava \"public static tipo nome ( params ) {}\".\n"
+        "<Declara\195\167\195\163o de fun\195\167\195\163o impr\195\179pria. Esperava \"tipo ID ( parametros ) { comandos [retorno [expressao];] }\">\n"
     | 15 ->
-        "Erro: declara\195\167\195\163o de fun\195\167\195\163o inv\195\161lida (15). Esperava \"public static tipo nome ( params ) {}\".\n"
+        "<Declara\195\167\195\163o de fun\195\167\195\163o impr\195\179pria. Esperava \"tipo ID ( parametros ) { comandos [retorno [expressao];] }\">\n"
     | 16 ->
-        "Erro: Tipo mal declarado (16). Esperava \"tipo identificador\".\n"
+        "<Esperava ap\195\179s declara\195\167\195\163o do tipo, esperava o identificador. Exemplo: \"tipo identificador[, tipo identificador, ...]\">\n"
     | 18 ->
-        "Esperava \")\" ap\195\179s declara\195\167\195\163o de par\195\162metros.\n"
+        "<Erro: esperava ')' ou outros par\195\162metros \"tipo identificador\" separados por ','>\n"
     | 19 ->
-        "Erro: Ap\195\179s \",\" esperava outro par\195\162metro do tipo \"tipo identificador\".\n"
+        "<Esperava \"tipo identificador\" ap\195\179s ','>\n"
     | 22 ->
-        "Erro: faltou o corpo da fun\195\167\195\163o.\n"
+        "<Erro, esperava \"{\". A fun\195\167\195\163o est\195\161 sem corpo.>\n"
     | 31 ->
-        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\".\n"
+        "<Esperava \"while ( expressao ) { comandos }\".>\n"
     | 32 ->
-        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\".\n"
+        "<Erro ap\195\179s \"while (\" esperava express\195\163o.>\n"
     | 80 ->
-        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\".\n"
+        "<O comando \"while\" n\195\163o pode ser declarado onde se esperava uma express\195\163o. Erro: \"while (expressao) { comandos }\">\n"
     | 81 ->
-        "Comando while mal declarado, Faltou o corpo do while. Esperava \"while (express\195\163o) { comandos... }\".\n"
+        "<Faltou o corpo do while. \" while (expr) { corpo }\">\n"
     | 82 ->
-        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\". O comando while n\195\163o foi fechado.\n"
+        "<Comando inv\195\161lido.>\n"
     | 164 ->
-        "Comando while mal declarado. Esperava \"while (express\195\163o) { comandos... }\". O comando while n\195\163o foi fechado.\n"
+        "<Erro desconhecido (1)>\n"
     | 131 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "<Erro desconhecido (2)>\n"
     | 24 ->
-        "Erro: faltou o tipo das vari\195\161veis.\n"
+        "<Ap\195\179s o tipo, esperava um ou mais identificadores.>\n"
     | 25 ->
-        "Faltou \";\" ap\195\179s declara\195\167\195\163o dos tipos.\n"
+        "<Erro: esperava \",\" ou \";\" ap\195\179s iddentificador>\n"
     | 26 ->
-        "Erro: ap\195\179s \",\" esperava outro identificador para vari\195\161vel.\n"
+        "<Ap\195\179s \",\" esperava outro identificador.>\n"
     | 168 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "<Erro desconhecido (3)>\n"
     | 23 ->
-        "Fun\195\167\195\163o n\195\163o fechada.\n"
+        "<Erro desconhecido (4)>\n"
     | 83 ->
-        "Comando switch mal declarado. Esperava \"switch (expressao) { cases }\".\n"
+        "<Comando \"switch\" mal declarado. Esperava \"switch (expressao) { <cases> <default> }>\n"
     | 84 ->
-        "Comando switch mal declarado. Esperava \"switch (expressao) { cases }\".\n"
+        "<Esperava express\195\163o ap\195\179s \"(\".>\n"
     | 85 ->
-        "Comando switch mal declarado. Esperava \"switch (expressao) { cases }\".\n"
+        "<N\195\163o se pode declarar um comando onde se espera uma express\195\163o. Esperava \"switch (expressao)\">\n"
     | 86 ->
-        "Erro: faltou o corpo do switch.\n"
+        "<Comando \"switch\" sem corpo.>\n"
     | 87 ->
-        "Erro: faltou a declara\195\167\195\163o dos cases.\n"
+        "<Esperava \"case\" ou \"default\".>\n"
     | 157 ->
-        "Ap\195\179s default, esperava \":\".\n"
+        "<Esperava \":\" ap\195\179s \"default\".>\n"
     | 158 ->
-        "Faltou \";\"?\n"
+        "<Esperava um comando. ou \"}\".>\n"
     | 160 ->
-        "Comando switch n\195\163o fechado. Faltou \"}\".\n"
+        "<Esperava \"}\". Comando \"switch\" n\195\163o fechado.>\n"
     | 88 ->
-        "Case mal declarado. Faltou express\195\163o.\n"
+        "<Ap\195\179s o \"case\", esperava uma express\195\163o.>\n"
     | 89 ->
-        "Faltou dois pontos ap\195\179s a express\195\163o do case.\n"
+        "<N\195\163o se pode declarar um comando onde se espera uma express\195\163o.>\n"
     | 90 ->
-        "Falotu o break ap\195\179s os comandos.\n"
+        "<Esperava um comando ap\195\179s \":\".>\n"
     | 153 ->
-        "Faltou \"BREAK\"?\n"
+        "<Esperava \"break;\" ap\195\179s declara\195\167\195\163o de comandos dentro de um \"case\".>\n"
     | 154 ->
-        "Faltou \";\" ap\195\179s o \"break\".\n"
+        "<Ap\195\179s o \"break\" esperava \";\".>\n"
     | 162 ->
-        "cases -> case . cases [ DEFAULT ]\n"
+        "<N\195\163o se pode declarar comandos ap\195\179s o \"break\". Esperava \"case\".>\n"
     | 91 ->
-        "Ap\195\179s return, faltou \";\" ou uma express\195\163o.\n"
+        "<Ap\195\179s \"return\" esperava uma express\195\163o.>\n"
     | 134 ->
-        "Ap\195\179s o comando, faltou o \";\".\n"
+        "<Esperava um comando.>\n"
     | 166 ->
-        "Faltou fechar a fun\195\167\195\163o.\n"
+        "<Fun\195\167\195\163o n\195\163o fechada. Esperava \"}\" no final da fun\195\167\195\163o.>\n"
     | 33 ->
-        "Ap\195\179s o \"!\", faltou uma express\195\163o.\n"
+        "<Ap\195\179s o \"!\" esperava uma express\195\163o>\n"
     | 79 ->
-        "Express\195\163o inv\195\161lida ap\195\179s o \"!\".\n"
+        "<Esperava um operador um operador ap\195\179s uma express\195\163o.>\n"
     | 34 ->
-        "Erro: o operador \"-\" necessita de dois operadores \"op1 - op2\".\n"
+        "<Ap\195\179s \"-\", esperava uma express\195\163o.>\n"
     | 92 ->
-        "Express\195\163o inv\195\161lida ap\195\179s o return.\n"
+        "<Esperava um operador ap\195\179s a express\195\163o.>\n"
     | 45 ->
-        "O operador \"*\" necessita de dois operadores \"op1 * op2\".\n"
+        "<Ap\195\179s o operador, esperava uma outra express\195\163o.>\n"
     | 47 ->
-        "O operador \"||\" necessita de dois operadores \"op1 || op2\".\n"
+        "<Esperava uma express\195\163o ap\195\179s \"||\".>\n"
     | 48 ->
-        "Expressao logica invalida.\n"
+        "<Esperava uma express\195\163o em vez de um comando ap\195\179s o operador>\n"
     | 49 ->
-        "O operador \"%%\" necessita de dois operadores \"op1 %% op2\".\n"
+        "<Esperava uma outra express\195\163o ap\195\179s o operador \"%\">\n"
     | 51 ->
-        "<O operador \"-\" necessita de dois operadores \"op1 - op2\".\n"
+        "<Esperava uma outra express\195\163o ap\195\179s \"-\">\n"
     | 52 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "<Esperava um operador ap\195\179s a express\195\163o ou \";\">\n"
     | 55 ->
-        "O operador \"<=\" necessita de dois operadores \"op1 <= op2\".\n"
+        "<Esperava uma outra express\195\163o ap\195\179s \"<=\">\n"
     | 56 ->
-        "Expressao invalida.\n"
+        "<Esperava outra express\195\163o ou \";\" ap\195\179s express\195\163o>\n"
     | 59 ->
-        "Faltou outra express\195\163o.\n"
+        "<Esperava outra express\195\163o ap\195\179s \"<\">\n"
     | 60 ->
-        "Expressao invalida.\n"
+        "<Esperava um operador ou \";\" ap\195\179s a express\195\163o.>\n"
     | 57 ->
-        "Expressao invalida.\n"
+        "<Esperava outra express\195\163o ap\195\179s \"+\">\n"
     | 58 ->
-        "Expressao invalida.\n"
+        "<Esperava um operador ou outra express\195\163o ap\195\179s \";\">\n"
     | 61 ->
-        "O operador \">=\" espera dois operadores. \"a >= b\".\n"
+        "<Esperava outra express\195\163o ap\195\179s \">=\">\n"
     | 62 ->
-        "Exp invalida.\n"
+        "<Ap\195\179s a express\195\163o, esperava outra express\195\163o ou \";\">\n"
     | 63 ->
-        "Operador \">\" esperava dois operadores \"a > b\".\n"
+        "<Esperava uma express\195\163o ap\195\179s \">\">\n"
     | 64 ->
-        "Express\195\163o inv\195\161lida.\n"
+        "<Esperava um outro perador ap\195\179s express\195\163o ou \";\">\n"
     | 65 ->
-        "O operador \"==\" recebe dois operadores. \"a == b\".\n"
+        "<Esperava express\195\163o ap\195\179s \"==\">\n"
     | 66 ->
-        "Express\195\163o inv\195\161lida.\n"
+        "<Esperava uma outra express\195\163o ou \";\">\n"
     | 67 ->
-        "Operador \"&&\" recebe dois operadores. \"a && b\".\n"
+        "<Esperava outra express\195\163o ap\195\179s \"&&\">\n"
     | 68 ->
-        "Expressao invalida.\n"
+        "<Esperava outro operador ou \";\" ap\195\179s express\195\163o>\n"
     | 53 ->
-        "O operador \"/\" recebe dois operadores \"a / b\".\n"
+        "<Esperava outra express\195\163o ap\195\179s \"/\">\n"
     | 69 ->
-        "O operador \"!=\" recebe dois operadores \"a != b\".\n"
+        "<Esperava outra express\195\163o ap\195\179s \"!=\">\n"
     | 70 ->
-        "Express\195\163o inv\195\161lida ap\195\179s \"!=\".\n"
+        "<Esperava outro operador ou \";\" ap\195\179s express\195\163o>\n"
     | 40 ->
-        "Chamada de fun\195\167\195\163o inv\195\161lida. Faltou os par\195\162metros \"id( parametros )\".\n"
+        "<Esperava \"(\" ou \";\" ap\195\179s identificador>\n"
     | 41 ->
-        "Chamada de fun\195\167\195\163o inv\195\161lida. Os par\195\162metros s\195\163o separados por \",\".\n"
+        "<Ap\195\179s \"(\" esperava uma lista de argumentos. Chamada de fun\195\167\195\163o inv\195\161lida>\n"
     | 133 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "<Esperava \";\" ap\195\179s o comando>\n"
     | 42 ->
-        "Faltou \")\" ap\195\179s a express\195\163o.\n"
+        "<Esperava uma express\195\163o ap\195\179s \"(\">\n"
     | 44 ->
-        "Express\195\163o inv\195\161lida antes de \")\".\n"
+        "<Esperava outro operador ou \";\" ap\195\179s express\195\163o>\n"
     | 93 ->
-        "Comando print mal declarado.\n"
+        "<Ap\195\179s \"System.out.printf\" esperava \"(\">\n"
     | 94 ->
-        "Comando print mal declarado. Faltou os parametros.\n"
+        "<Ap\195\179s \"System.out.printf (\" esperava uma lista de argumentos>\n"
     | 73 ->
-        "<YOUR SYNTAX ERROR MESSAGE HERE>\n"
+        "<Esperava outro operador ou \";\" ap\195\179s express\195\163o>\n"
     | 74 ->
-        "Faltou outra espress\195\163o \",\".\n"
+        "<Ap\195\179s \",\", esperava outra express\195\163o>\n"
     | 97 ->
-        "Faltou \"(\" ap\195\179s o comando \"if\".\n"
+        "<Ap\195\179s \"if\", esperava \"(\">\n"
     | 98 ->
-        "Comando \"if\" mal declarado. Faltou express\195\163o.\n"
+        "<Ap\195\179s \"if (\" esperava uma express\195\163o.>\n"
     | 99 ->
-        "Express\195\163o mal declarada.\n"
+        "<Esperava outro operador ou \";\" ap\195\179s express\195\163o>\n"
     | 100 ->
-        "Faltou o corpo do if.\n"
+        "<Comando \"if\" sem corpo>\n"
     | 101 ->
-        "Faltou fechar o comando if com \"}\".\n"
+        "<Esperava um comando ou \"}\">\n"
     | 145 ->
-        "Faltou fechar o comando if com \"}\" (2).\n"
+        "<Esperava \"}\". Comando \"if\" n\195\163o fechado>\n"
     | 146 ->
-        "Erro desconhecido parte else.\n"
+        "<Esperava outro comando ou \"else { comandos }\" ap\195\179s o \"if\">\n"
     | 147 ->
-        "Faltou o corpo do else ou declara\195\167\195\163o de if.\n"
+        "<Esperava \"{\" ou \"if ( express\195\163o ) { comandos }\" ap\195\179s \"else\">\n"
     | 148 ->
-        "Faltou fechar o comando else.\n"
+        "<Esperava um comando ap\195\179s \"{\">\n"
     | 149 ->
-        "Faltou o \"}\" do comando else.\n"
+        "<Esperava \"}\". Comando \"if\" n\195\163o fechado>\n"
     | 102 ->
-        "Identificador fora de express\195\163o.\n"
+        "Esperava \"=\", \"+=\", \"-=\", \"/=\", \"*=\", \"--\" ou \"++\" ap\195\179s identificador.\n"
     | 103 ->
-        "Faltou express\195\163o ap\195\179s \"*=\".\n"
+        "<Ap\195\179s \"*=\" esperava uma express\195\163o>\n"
     | 104 ->
-        "Express\195\163o mal delcarada ap\195\179s \"*=\".\n"
+        "<Esperava um \";\" ou outro operador>\n"
     | 106 ->
-        "Faltou express\195\163o ap\195\179s \"-=\".\n"
+        "<Esperava outra express\195\163o ap\195\179s \"-=\">\n"
     | 107 ->
-        "Express\195\163o invalida ap\195\179s \"-=\".\n"
+        "<Esperava outro operador ou \";\" ap\195\179s express\195\163o>\n"
     | 109 ->
-        "Faltou express\195\163o \"+=\".\n"
+        "<Experava uma exptess\195\163o ap\195\179s \"+=\">\n"
     | 110 ->
-        "Express\195\163o mal formada.\n"
+        "<Esperava outro operador ou \";\" ap\195\179s uma express\195\163o>\n"
     | 111 ->
-        "Faltou express\195\163o ap\195\179s \"/=\".\n"
+        "<Ap\195\179s \"/=\" esperava uma atribui\195\167\195\163o.>\n"
     | 112 ->
-        "Express\195\163o invalida apos \"/=\".\n"
+        "<Esperava outro operador ou \";\" ap\195\179s uma express\195\163o>\n"
     | 113 ->
-        "Faltou express\195\163o ap\195\179s atribui\195\167\195\163o \"=\".\n"
+        "<Ap\195\179s \"=\" esperava uma express\195\163o ou um comando de leitura>\n"
     | 118 ->
-        "Express\195\163o mal formada ap\195\179s \"=\".\n"
+        "<Esperava outro operador ou \";\" ap\195\179s uma express\195\163o>\n"
     | 119 ->
-        "Comando for mal formado. Esperafa \"for (inicializacao; expressao; comando) { comandos }\".\n"
+        "<Ap\195\179s \"for\" esperava \"(\". Exemplo \"for (atrib; expressao; comando) { comandos }\">\n"
     | 120 ->
-        "Comando for mal formado Faltou inicializa\195\167\195\163o. Esperafa \"for (inicializacao; expressao; comando) { comandos }\".\n"
+        "<Ap\195\179s \"for (\" esperava um comando de atribui\195\167\195\163o.>\n"
     | 121 ->
-        "Comando de inicializa\195\167\195\163o mal formado. Deve ser comando de atribui\195\167\195\163o.\n"
+        "<Ap\195\179s o identificador, esperava \"=\", \"+=\", \"-=\", \"*=\", \"/=\">\n"
     | 123 ->
-        "Faltou express\195\163o ap\195\179s comando de inicializa\195\167\195\163o.\n"
+        "<Ap\195\179s \";\" esperava uma express\195\163o.>\n"
     | 124 ->
-        "Express\195\163o mal formada no for.\n"
+        "<Esperava outro operador ou \";\" ap\195\179s uma express\195\163o>\n"
     | 125 ->
-        "Faltou o comando para incremento no for.\n"
+        "<Esperava \";\" um comando>\n"
     | 126 ->
-        "Faltou o \")\". Esperava \"for (inicializacao; expr; comando) { comandos }\".\n"
+        "<Ap\195\179s o comando, esperava \")\">\n"
     | 127 ->
-        "Faltou o corpo do for.\n"
+        "<Comando for sem corpo. Esperava \"{\">\n"
     | 128 ->
-        "<Faltou fechar o comando for.\n"
+        "<Dentro do corpo do \"for\" esperava um comando.>\n"
     | 129 ->
-        "Faltou fechar o comando for.\n"
+        "<Comando for n\195\163o fechado \"}\">\n"
     | 122 ->
-        "Comando de atribui\195\167\195\163o mal formado. Faltou PTV.\n"
+        "<Ap\195\179s o comando de atribui\195\167\195\163o, esperava \";\">\n"
     | 173 ->
-        "Erro: comandos ou express\195\181es devem ser declarados dentro de fun\195\167\195\181es.\n"
+        "<Ap\195\179s uma fun\195\167\195\163o, esperava uma fun\195\167\195\163o ou \"}\". Comandos n\195\163o podem ser declarados fora de fun\195\167\195\181es.>\n"
     | 171 ->
-        "Erro: nenhuma declara\195\167\195\163o de express\195\163o ou comando deve ser feita ap\195\179s a declara\195\167\195\163o de programa.\n"
+        "<Comando declarado fora de fun\195\167\195\163o. Esperava fim de arquivo ap\195\179s \"}\">\n"
     | _ ->
         raise Not_found

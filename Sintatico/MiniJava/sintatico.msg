@@ -8,7 +8,7 @@ programa: PUBLIC CLASS ID ACHAVE FCHAVE WHILE
 ## PUBLIC CLASS ID ACHAVE funcoes FCHAVE 
 ##
 
-Erro: nenhuma declaração de expressão ou comando deve ser feita após a declaração de programa.
+<Comando declarado fora de função. Esperava fim de arquivo após "}">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC BOOLEAN ID APAR FPAR ACHAVE FCHAVE WHILE 
 ##
@@ -20,7 +20,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC BOOLEAN ID APAR FPAR ACHAVE FCHAV
 ## declaracao_funcao 
 ##
 
-Erro: comandos ou expressões devem ser declarados dentro de funções.
+<Após uma função, esperava uma função ou "}". Comandos não podem ser declarados fora de funções.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR ID ATRIB READCHAR WHILE 
 ##
@@ -32,7 +32,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## FOR APAR cmd_atrib 
 ##
 
-Comando de atribuição mal formado. Faltou PTV.
+<Após o comando de atribuição, esperava ";">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR ID VEZESIGUAL ID PTV LITSTRING PTV RETURN FPAR ACHAVE RETURN PTV BREAK 
 ##
@@ -51,7 +51,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## In state 135, spurious reduction of production comandos -> comando PTV comandos 
 ##
 
-Faltou fechar o comando for.
+<Comando for não fechado "}">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR ID VEZESIGUAL ID PTV LITSTRING PTV RETURN FPAR ACHAVE VOID 
 ##
@@ -63,7 +63,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## FOR APAR cmd_atrib PTV expr PTV comando FPAR ACHAVE 
 ##
 
-<Faltou fechar o comando for.
+<Dentro do corpo do "for" esperava um comando.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR ID VEZESIGUAL ID PTV LITSTRING PTV RETURN FPAR WHILE 
 ##
@@ -75,7 +75,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## FOR APAR cmd_atrib PTV expr PTV comando FPAR 
 ##
 
-Faltou o corpo do for.
+<Comando for sem corpo. Esperava "{">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR ID VEZESIGUAL ID PTV LITSTRING PTV RETURN PTV 
 ##
@@ -94,7 +94,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## In state 138, spurious reduction of production comando -> cmd_return 
 ##
 
-Faltou o ")". Esperava "for (inicializacao; expr; comando) { comandos }".
+<Após o comando, esperava ")">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR ID VEZESIGUAL ID PTV LITSTRING PTV WHILE 
 ##
@@ -106,7 +106,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## FOR APAR cmd_atrib PTV expr PTV 
 ##
 
-Faltou o comando para incremento no for.
+<Esperava ";" um comando>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR ID VEZESIGUAL ID PTV LITSTRING WHILE 
 ##
@@ -131,7 +131,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## FOR APAR cmd_atrib PTV expr 
 ##
 
-Expressão mal formada no for.
+<Esperava outro operador ou ";" após uma expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR ID VEZESIGUAL ID PTV WHILE 
 ##
@@ -143,7 +143,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## FOR APAR cmd_atrib PTV 
 ##
 
-Faltou expressão após comando de inicialização.
+<Após ";" esperava uma expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR ID WHILE 
 ##
@@ -163,7 +163,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## ID 
 ##
 
-Comando de inicialização mal formado. Deve ser comando de atribuição.
+<Após o identificador, esperava "=", "+=", "-=", "*=", "/=">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR WHILE 
 ##
@@ -175,7 +175,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR APAR
 ## FOR APAR 
 ##
 
-Comando for mal formado Faltou inicialização. Esperafa "for (inicializacao; expressao; comando) { comandos }".
+<Após "for (" esperava um comando de atribuição.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR WHILE 
 ##
@@ -187,7 +187,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE FOR WHIL
 ## FOR 
 ##
 
-Comando for mal formado. Esperafa "for (inicializacao; expressao; comando) { comandos }".
+<Após "for" esperava "(". Exemplo "for (atrib; expressao; comando) { comandos }">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID ATRIB LITSTRING WHILE 
 ##
@@ -212,7 +212,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID ATRIB
 ## ID ATRIB expr 
 ##
 
-Expressão mal formada após "=".
+<Esperava outro operador ou ";" após uma expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID ATRIB WHILE 
 ##
@@ -228,7 +228,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID ATRIB
 ## ID ATRIB 
 ##
 
-Faltou expressão após atribuição "=".
+<Após "=" esperava uma expressão ou um comando de leitura>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID DIVIGUAL LITSTRING WHILE 
 ##
@@ -253,7 +253,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID DIVIG
 ## ID DIVIGUAL expr 
 ##
 
-Expressão invalida apos "/=".
+<Esperava outro operador ou ";" após uma expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID DIVIGUAL WHILE 
 ##
@@ -265,7 +265,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID DIVIG
 ## ID DIVIGUAL 
 ##
 
-Faltou expressão após "/=".
+<Após "/=" esperava uma atribuição.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID MAISIGUAL LITSTRING WHILE 
 ##
@@ -290,7 +290,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID MAISI
 ## ID MAISIGUAL expr 
 ##
 
-Expressão mal formada.
+<Esperava outro operador ou ";" após uma expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID MAISIGUAL WHILE 
 ##
@@ -302,7 +302,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID MAISI
 ## ID MAISIGUAL 
 ##
 
-Faltou expressão "+=".
+<Experava uma exptessão após "+=">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID MENOSIGUAL LITSTRING WHILE 
 ##
@@ -327,7 +327,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID MENOS
 ## ID MENOSIGUAL expr 
 ##
 
-Expressão invalida após "-=".
+<Esperava outro operador ou ";" após expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID MENOSIGUAL WHILE 
 ##
@@ -339,7 +339,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID MENOS
 ## ID MENOSIGUAL 
 ##
 
-Faltou expressão após "-=".
+<Esperava outra expressão após "-=">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID VEZESIGUAL LITSTRING WHILE 
 ##
@@ -364,7 +364,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID VEZES
 ## ID VEZESIGUAL expr 
 ##
 
-Expressão mal delcarada após "*=".
+<Esperava um ";" ou outro operador>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID VEZESIGUAL WHILE 
 ##
@@ -376,7 +376,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID VEZES
 ## ID VEZESIGUAL 
 ##
 
-Faltou expressão após "*=".
+<Após "*=" esperava uma expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID WHILE 
 ##
@@ -398,7 +398,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE ID WHILE
 ## ID 
 ##
 
-Identificador fora de expressão.
+Esperava "=", "+=", "-=", "/=", "*=", "--" ou "++" após identificador.
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR LITSTRING FPAR ACHAVE FCHAVE ELSE ACHAVE RETURN PTV BREAK 
 ##
@@ -417,7 +417,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR 
 ## In state 135, spurious reduction of production comandos -> comando PTV comandos 
 ##
 
-Faltou o "}" do comando else.
+<Esperava "}". Comando "if" não fechado>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR LITSTRING FPAR ACHAVE FCHAVE ELSE ACHAVE VOID 
 ##
@@ -429,7 +429,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR 
 ## ELSE ACHAVE 
 ##
 
-Faltou fechar o comando else.
+<Esperava um comando após "{">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR LITSTRING FPAR ACHAVE FCHAVE ELSE WHILE 
 ##
@@ -442,7 +442,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR 
 ## ELSE 
 ##
 
-Faltou o corpo do else ou declaração de if.
+<Esperava "{" ou "if ( expressão ) { comandos }" após "else">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR LITSTRING FPAR ACHAVE FCHAVE VOID 
 ##
@@ -454,7 +454,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR 
 ## IF APAR expr FPAR ACHAVE comandos FCHAVE 
 ##
 
-Erro desconhecido parte else.
+<Esperava outro comando ou "else { comandos }" após o "if">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR LITSTRING FPAR ACHAVE RETURN PTV BREAK 
 ##
@@ -473,7 +473,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR 
 ## In state 135, spurious reduction of production comandos -> comando PTV comandos 
 ##
 
-Faltou fechar o comando if com "}" (2).
+<Esperava "}". Comando "if" não fechado>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR LITSTRING FPAR ACHAVE VOID 
 ##
@@ -485,7 +485,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR 
 ## IF APAR expr FPAR ACHAVE 
 ##
 
-Faltou fechar o comando if com "}".
+<Esperava um comando ou "}">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR LITSTRING FPAR WHILE 
 ##
@@ -497,7 +497,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR 
 ## IF APAR expr FPAR 
 ##
 
-Faltou o corpo do if.
+<Comando "if" sem corpo>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR LITSTRING WHILE 
 ##
@@ -522,7 +522,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR 
 ## IF APAR expr 
 ##
 
-Expressão mal declarada.
+<Esperava outro operador ou ";" após expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR WHILE 
 ##
@@ -534,7 +534,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF APAR 
 ## IF APAR 
 ##
 
-Comando "if" mal declarado. Faltou expressão.
+<Após "if (" esperava uma expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF WHILE 
 ##
@@ -546,7 +546,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE IF WHILE
 ## IF 
 ##
 
-Faltou "(" após o comando "if".
+<Após "if", esperava "(">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE PRINT APAR LITSTRING VIRG WHILE 
 ##
@@ -558,7 +558,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE PRINT AP
 ## expr VIRG 
 ##
 
-Faltou outra espressão ",".
+<Após ",", esperava outra expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE PRINT APAR LITSTRING WHILE 
 ##
@@ -584,7 +584,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE PRINT AP
 ## expr 
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+<Esperava outro operador ou ";" após expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE PRINT APAR WHILE 
 ##
@@ -596,7 +596,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE PRINT AP
 ## PRINT APAR 
 ##
 
-Comando print mal declarado. Faltou os parametros.
+<Após "System.out.printf (" esperava uma lista de argumentos>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE PRINT WHILE 
 ##
@@ -608,7 +608,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE PRINT WH
 ## PRINT 
 ##
 
-Comando print mal declarado.
+<Após "System.out.printf" esperava "(">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN APAR LITSTRING WHILE 
 ##
@@ -633,7 +633,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN A
 ## APAR expr 
 ##
 
-Expressão inválida antes de ")".
+<Esperava outro operador ou ";" após expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN APAR WHILE 
 ##
@@ -645,7 +645,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN A
 ## APAR 
 ##
 
-Faltou ")" após a expressão.
+<Esperava uma expressão após "(">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN FPAR 
 ##
@@ -664,7 +664,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN F
 ## In state 138, spurious reduction of production comando -> cmd_return 
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+<Esperava ";" após o comando>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN ID APAR WHILE 
 ##
@@ -676,7 +676,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN I
 ## ID APAR 
 ##
 
-Chamada de função inválida. Os parâmetros são separados por ",".
+<Após "(" esperava uma lista de argumentos. Chamada de função inválida>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN ID WHILE 
 ##
@@ -689,7 +689,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN I
 ## ID 
 ##
 
-Chamada de função inválida. Faltou os parâmetros "id( parametros )".
+<Esperava "(" ou ";" após identificador>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING DIFER LITSTRING WHILE 
 ##
@@ -714,7 +714,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr DIFER expr 
 ##
 
-Expressão inválida após "!=".
+<Esperava outro operador ou ";" após expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING DIFER WHILE 
 ##
@@ -726,7 +726,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr DIFER 
 ##
 
-O operador "!=" recebe dois operadores "a != b".
+<Esperava outra expressão após "!=">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING DIV WHILE 
 ##
@@ -738,7 +738,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr DIV 
 ##
 
-O operador "/" recebe dois operadores "a / b".
+<Esperava outra expressão após "/">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING ELOG LITSTRING WHILE 
 ##
@@ -763,7 +763,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr ELOG expr 
 ##
 
-Expressao invalida.
+<Esperava outro operador ou ";" após expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING ELOG WHILE 
 ##
@@ -775,7 +775,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr ELOG 
 ##
 
-Operador "&&" recebe dois operadores. "a && b".
+<Esperava outra expressão após "&&">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING IGUAL LITSTRING WHILE 
 ##
@@ -800,7 +800,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr IGUAL expr 
 ##
 
-Expressão inválida.
+<Esperava uma outra expressão ou ";">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING IGUAL WHILE 
 ##
@@ -812,7 +812,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr IGUAL 
 ##
 
-O operador "==" recebe dois operadores. "a == b".
+<Esperava expressão após "==">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MAIOR LITSTRING WHILE 
 ##
@@ -837,7 +837,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MAIOR expr 
 ##
 
-Expressão inválida.
+<Esperava um outro perador após expressão ou ";">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MAIOR WHILE 
 ##
@@ -849,7 +849,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MAIOR 
 ##
 
-Operador ">" esperava dois operadores "a > b".
+<Esperava uma expressão após ">">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MAIORIGUAL LITSTRING WHILE 
 ##
@@ -874,7 +874,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MAIORIGUAL expr 
 ##
 
-Exp invalida.
+<Após a expressão, esperava outra expressão ou ";">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MAIORIGUAL WHILE 
 ##
@@ -886,7 +886,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MAIORIGUAL 
 ##
 
-O operador ">=" espera dois operadores. "a >= b".
+<Esperava outra expressão após ">=">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MAIS LITSTRING WHILE 
 ##
@@ -911,7 +911,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MAIS expr 
 ##
 
-Expressao invalida.
+<Esperava um operador ou outra expressão após ";">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MAIS WHILE 
 ##
@@ -923,7 +923,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MAIS 
 ##
 
-Expressao invalida.
+<Esperava outra expressão após "+">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MENOR LITSTRING WHILE 
 ##
@@ -948,7 +948,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MENOR expr 
 ##
 
-Expressao invalida.
+<Esperava um operador ou ";" após a expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MENOR WHILE 
 ##
@@ -960,7 +960,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MENOR 
 ##
 
-Faltou outra expressão.
+<Esperava outra expressão após "<">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MENORIGUAL LITSTRING WHILE 
 ##
@@ -985,7 +985,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MENORIGUAL expr 
 ##
 
-Expressao invalida.
+<Esperava outra expressão ou ";" após expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MENORIGUAL WHILE 
 ##
@@ -997,7 +997,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MENORIGUAL 
 ##
 
-O operador "<=" necessita de dois operadores "op1 <= op2".
+<Esperava uma outra expressão após "<=">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MENOS LITSTRING WHILE 
 ##
@@ -1022,7 +1022,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MENOS expr 
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+<Esperava um operador após a expressão ou ";">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MENOS WHILE 
 ##
@@ -1034,7 +1034,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MENOS 
 ##
 
-<O operador "-" necessita de dois operadores "op1 - op2".
+<Esperava uma outra expressão após "-">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING MOD WHILE 
 ##
@@ -1046,7 +1046,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr MOD 
 ##
 
-O operador "%%" necessita de dois operadores "op1 %% op2".
+<Esperava uma outra expressão após o operador "%">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING OULOG LITSTRING WHILE 
 ##
@@ -1071,7 +1071,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr OULOG expr 
 ##
 
-Expressao logica invalida.
+<Esperava uma expressão em vez de um comando após o operador>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING OULOG WHILE 
 ##
@@ -1083,8 +1083,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr OULOG 
 ##
 
-O operador "||" necessita de dois operadores "op1 || op2".
-
+<Esperava uma expressão após "||".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING VEZES WHILE 
 ##
@@ -1096,7 +1095,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## expr VEZES 
 ##
 
-O operador "*" necessita de dois operadores "op1 * op2".
+<Após o operador, esperava uma outra expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN LITSTRING WHILE 
 ##
@@ -1121,7 +1120,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN L
 ## RETURN expr 
 ##
 
-Expressão inválida após o return.
+<Esperava um operador após a expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN MENOS WHILE 
 ##
@@ -1133,7 +1132,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN M
 ## MENOS 
 ##
 
-Erro: o operador "-" necessita de dois operadores "op1 - op2".
+<Após "-", esperava uma expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN NOT LITSTRING WHILE 
 ##
@@ -1158,7 +1157,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN N
 ## NOT expr 
 ##
 
-Expressão inválida após o "!".
+<Esperava um operador um operador após uma expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN NOT WHILE 
 ##
@@ -1170,7 +1169,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN N
 ## NOT 
 ##
 
-Após o "!", faltou uma expressão.
+<Após o "!" esperava uma expressão>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN PTV BREAK 
 ##
@@ -1189,7 +1188,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN P
 ## In state 135, spurious reduction of production comandos -> comando PTV comandos 
 ##
 
-Faltou fechar a função.
+<Função não fechada. Esperava "}" no final da função.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN PTV VOID 
 ##
@@ -1201,7 +1200,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN P
 ## comando PTV 
 ##
 
-Após o comando, faltou o ";".
+<Esperava um comando.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN WHILE 
 ##
@@ -1214,7 +1213,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE RETURN W
 ## RETURN 
 ##
 
-Após return, faltou ";" ou uma expressão.
+<Após "return" esperava uma expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE CASE LITSTRING DPTOS BREAK PTV WHILE 
 ##
@@ -1226,7 +1225,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## case 
 ##
 
-cases -> case . cases [ DEFAULT ]
+<Não se pode declarar comandos após o "break". Esperava "case".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE CASE LITSTRING DPTOS BREAK WHILE 
 ##
@@ -1238,7 +1237,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## CASE expr DPTOS comandos BREAK 
 ##
 
-Faltou ";" após o "break".
+<Após o "break" esperava ";".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE CASE LITSTRING DPTOS RETURN PTV FCHAVE 
 ##
@@ -1257,7 +1256,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## In state 135, spurious reduction of production comandos -> comando PTV comandos 
 ##
 
-Faltou "BREAK"?
+<Esperava "break;" após declaração de comandos dentro de um "case".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE CASE LITSTRING DPTOS VOID 
 ##
@@ -1269,7 +1268,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## CASE expr DPTOS 
 ##
 
-Falotu o break após os comandos.
+<Esperava um comando após ":".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE CASE LITSTRING WHILE 
 ##
@@ -1294,7 +1293,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## CASE expr 
 ##
 
-Faltou dois pontos após a expressão do case.
+<Não se pode declarar um comando onde se espera uma expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE CASE WHILE 
 ##
@@ -1306,7 +1305,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## CASE 
 ##
 
-Case mal declarado. Faltou expressão.
+<Após o "case", esperava uma expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE DEFAULT DPTOS RETURN PTV BREAK 
 ##
@@ -1326,7 +1325,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## In state 159, spurious reduction of production default -> DEFAULT DPTOS comandos 
 ##
 
-Comando switch não fechado. Faltou "}".
+<Esperava "}". Comando "switch" não fechado.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE DEFAULT DPTOS VOID 
 ##
@@ -1338,7 +1337,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## DEFAULT DPTOS 
 ##
 
-Faltou ";"?
+<Esperava um comando. ou "}".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE DEFAULT WHILE 
 ##
@@ -1350,7 +1349,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## DEFAULT 
 ##
 
-Após default, esperava ":".
+<Esperava ":" após "default".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR ACHAVE WHILE 
 ##
@@ -1362,7 +1361,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## SWITCH APAR expr FPAR ACHAVE 
 ##
 
-Erro: faltou a declaração dos cases.
+<Esperava "case" ou "default".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING FPAR WHILE 
 ##
@@ -1374,7 +1373,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## SWITCH APAR expr FPAR 
 ##
 
-Erro: faltou o corpo do switch.
+<Comando "switch" sem corpo.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR LITSTRING WHILE 
 ##
@@ -1399,7 +1398,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## SWITCH APAR expr 
 ##
 
-Comando switch mal declarado. Esperava "switch (expressao) { cases }".
+<Não se pode declarar um comando onde se espera uma expressão. Esperava "switch (expressao)">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH APAR WHILE 
 ##
@@ -1411,7 +1410,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH A
 ## SWITCH APAR 
 ##
 
-Comando switch mal declarado. Esperava "switch (expressao) { cases }".
+<Esperava expressão após "(".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH WHILE 
 ##
@@ -1423,7 +1422,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE SWITCH W
 ## SWITCH 
 ##
 
-Comando switch mal declarado. Esperava "switch (expressao) { cases }".
+<Comando "switch" mal declarado. Esperava "switch (expressao) { <cases> <default> }>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VIRG 
 ##
@@ -1435,7 +1434,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VIRG
 ## PUBLIC STATIC tipo ID APAR lista_parametros FPAR ACHAVE 
 ##
 
-Função não fechada.
+<Erro desconhecido (4)>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VOID ID PTV VIRG 
 ##
@@ -1447,7 +1446,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VOID ID 
 ## declaracao 
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+<Erro desconhecido (3)>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VOID ID VIRG WHILE 
 ##
@@ -1459,7 +1458,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VOID ID 
 ## ID VIRG 
 ##
 
-Erro: após "," esperava outro identificador para variável.
+<Após "," esperava outro identificador.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VOID ID WHILE 
 ##
@@ -1472,7 +1471,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VOID ID 
 ## ID 
 ##
 
-Faltou ";" após declaração dos tipos.
+<Erro: esperava "," ou ";" após iddentificador>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VOID WHILE 
 ##
@@ -1484,7 +1483,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE VOID WHI
 ## tipo 
 ##
 
-Erro: faltou o tipo das variáveis.
+<Após o tipo, esperava um ou mais identificadores.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE APAR ID FPAR ACHAVE FCHAVE VOID 
 ##
@@ -1496,7 +1495,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE AP
 ## comando_s 
 ##
 
-<YOUR SYNTAX ERROR MESSAGE HERE>
+<Erro desconhecido (2)>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE APAR LITSTRING FPAR ACHAVE RETURN PTV BREAK 
 ##
@@ -1515,7 +1514,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE AP
 ## In state 135, spurious reduction of production comandos -> comando PTV comandos 
 ##
 
-Comando while mal declarado. Esperava "while (expressão) { comandos... }". O comando while não foi fechado.
+<Erro desconhecido (1)>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE APAR LITSTRING FPAR ACHAVE VOID 
 ##
@@ -1527,7 +1526,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE AP
 ## WHILE APAR expr FPAR ACHAVE 
 ##
 
-Comando while mal declarado. Esperava "while (expressão) { comandos... }". O comando while não foi fechado.
+<Comando inválido.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE APAR LITSTRING FPAR WHILE 
 ##
@@ -1539,7 +1538,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE AP
 ## WHILE APAR expr FPAR 
 ##
 
-Comando while mal declarado, Faltou o corpo do while. Esperava "while (expressão) { comandos... }".
+<Faltou o corpo do while. " while (expr) { corpo }">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE APAR LITSTRING WHILE 
 ##
@@ -1564,7 +1563,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE AP
 ## WHILE APAR expr 
 ##
 
-Comando while mal declarado. Esperava "while (expressão) { comandos... }".
+<O comando "while" não pode ser declarado onde se esperava uma expressão. Erro: "while (expressao) { comandos }">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE APAR WHILE 
 ##
@@ -1576,7 +1575,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE AP
 ## WHILE APAR 
 ##
 
-Comando while mal declarado. Esperava "while (expressão) { comandos... }".
+<Erro após "while (" esperava expressão.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE WHILE 
 ##
@@ -1588,7 +1587,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR ACHAVE WHILE WH
 ## WHILE 
 ##
 
-Comando while mal declarado. Esperava "while (expressão) { comandos... }".
+<Esperava "while ( expressao ) { comandos }".>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR WHILE 
 ##
@@ -1600,7 +1599,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR FPAR WHILE
 ## PUBLIC STATIC tipo ID APAR lista_parametros FPAR 
 ##
 
-Erro: faltou o corpo da função.
+<Erro, esperava "{". A função está sem corpo.>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR VOID ID VIRG WHILE 
 ##
@@ -1612,7 +1611,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR VOID ID VIRG WHILE
 ## parametro VIRG 
 ##
 
-Erro: Após "," esperava outro parâmetro do tipo "tipo identificador".
+<Esperava "tipo identificador" após ','>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR VOID ID WHILE 
 ##
@@ -1625,7 +1624,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR VOID ID WHILE
 ## parametro 
 ##
 
-Esperava ")" após declaração de parâmetros.
+<Erro: esperava ')' ou outros parâmetros "tipo identificador" separados por ','>
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR VOID WHILE 
 ##
@@ -1637,7 +1636,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR VOID WHILE
 ## tipo 
 ##
 
-Erro: Tipo mal declarado (16). Esperava "tipo identificador".
+<Esperava após declaração do tipo, esperava o identificador. Exemplo: "tipo identificador[, tipo identificador, ...]">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR WHILE 
 ##
@@ -1649,7 +1648,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID APAR WHILE
 ## PUBLIC STATIC tipo ID APAR 
 ##
 
-Erro: declaração de função inválida (15). Esperava "public static tipo nome ( params ) {}".
+<Declaração de função imprópria. Esperava "tipo ID ( parametros ) { comandos [retorno [expressao];] }">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID WHILE 
 ##
@@ -1661,7 +1660,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID ID WHILE
 ## PUBLIC STATIC tipo ID 
 ##
 
-Erro: declaração de função inválida (14). Esperava "public static tipo nome ( params ) {}".
+<Declaração de função imprópria. Esperava "tipo ID ( parametros ) { comandos [retorno [expressao];] }">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID WHILE 
 ##
@@ -1673,7 +1672,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC VOID WHILE
 ## PUBLIC STATIC tipo 
 ##
 
-Erro: declaração de função inválida (13). Esperava "public static tipo nome ( params ) {}".
+<<Declaração de função imprópria. Esperava "tipo ID ( parametros ) { comandos [retorno [expressao];] }">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC WHILE 
 ##
@@ -1685,7 +1684,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC STATIC WHILE
 ## PUBLIC STATIC 
 ##
 
-Erro: declaração de função inválida (6). Esperava "public static tipo nome ( params ) {}".
+<Declaração de função imprópria. Esperava "tipo ID ( parametros ) { comandos [retorno [expressao];] }">
 
 programa: PUBLIC CLASS ID ACHAVE PUBLIC WHILE 
 ##
@@ -1697,7 +1696,7 @@ programa: PUBLIC CLASS ID ACHAVE PUBLIC WHILE
 ## PUBLIC 
 ##
 
-Erro: declaração de função inválida (5). Esperava "public static tipo nome ( params ) {}".
+<Declaração de função imprópria. Esperava "tipo ID ( parametros ) { comandos [retorno [expressao];] }">
 
 programa: PUBLIC CLASS ID ACHAVE WHILE 
 ##
@@ -1709,7 +1708,7 @@ programa: PUBLIC CLASS ID ACHAVE WHILE
 ## PUBLIC CLASS ID ACHAVE 
 ##
 
-Erro: Declaração de programa inválida (4). Exemplo: public class Exemplo { }
+<Esperava '}' ou declaração de funções.>
 
 programa: PUBLIC CLASS ID WHILE 
 ##
@@ -1721,7 +1720,7 @@ programa: PUBLIC CLASS ID WHILE
 ## PUBLIC CLASS ID 
 ##
 
-Erro: Declaração de programa inválida (3). Exemplo: public class Exemplo { }
+<Definição incorreta de programa. Esperava "public class ID {}>
 
 programa: PUBLIC CLASS WHILE 
 ##
@@ -1733,7 +1732,7 @@ programa: PUBLIC CLASS WHILE
 ## PUBLIC CLASS 
 ##
 
-Erro: Declaração de programa inválida (2). Exemplo: public class Exemplo { }
+<Definição incorreta de programa. Esperava "public class ID {}>
 
 programa: PUBLIC WHILE 
 ##
@@ -1745,7 +1744,7 @@ programa: PUBLIC WHILE
 ## PUBLIC 
 ##
 
-Erro: Declaração de programa inválida (1). Exemplo: public class Exemplo { }
+<Definição incorreta de programa. Esperava "public class ID {}>
 
 programa: WHILE 
 ##
@@ -1757,5 +1756,5 @@ programa: WHILE
 ## 
 ##
 
-Erro: Declaração de programa inválida (0). Exemplo: public class Exemplo { }
+<Definição incorreta de programa. Esperava "public class ID {}>
 
