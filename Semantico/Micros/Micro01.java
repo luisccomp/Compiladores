@@ -8,7 +8,7 @@ public class Micro01 {
 		System.out.printf("Tabela de conversao: Celcius -> Farenheit\n");
 		System.out.printf("Digite a temperatura em Celcius:");
 		cel = Float.parseFloat(s.nextLine());
-		far = (9*cel+160)/5;
+		far = (9.0*cel+160.0)/5.0;
 		System.out.printf("A nova temperatura e: %f F\n", far);
 	}
 }

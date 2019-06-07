@@ -1,91 +1,36 @@
 {
-	open Lexing
-	open Parser (* Adicionando o módulo parser. Os tokens da mini linguagem.
-                   Todos os tokens serão declarados aqui. *)
-	open Printf
+  (* Importando o módulo sintático. Os tokens lexicais serão declarados nesse módulo. *)
+  open Sintatico
+  open Lexing
+  open Printf
 
-	(* Os tokens lexicais não tem mais necessidade de estarem aqui.
-	(* Tokens lexicais da mini linguagem *)
-    type tokens = APAR
-                | FPAR
-                | ACOL
-                | FCOL
-                | ATRIB
-                | IF
-                | WHILE
-                | MAIS
-                | PUBLIC
-                | CLASS
-                | STATIC
-                | VOID
-                | ACHAVE
-                | FCHAVE
-                | INT
-                | PTV
-                | PTO
-                | MENOS
-                | ELSE
-                | IGUAL
-                | DIFER
-                | MAIOR
-                | MENOR
-                | MAIORIGUAL
-                | MENORIGUAL
-                | ELOG
-                | OULOG
-                | NOT
-                | STRING
-                | LITFLOAT of float
-                | VEZES
-                | DIV
-                | VIRG
-                | FLOAT
-                | READFLOAT
-                | IMPORT
-                | READINT
-                | READCHAR
-                | READSTRING
-                | MAISMAIS
-                | MENOSMENOS
-                | DPTOS
-                | SWITCH
-                | CASE
-                | BREAK
-                | CHAR
-                | FOR
-                | MAISIGUAL
-                | MENOSIGUAL
-                | VEZESIGUAL
-                | BOOLEAN
-                | DIVIGUAL
-                | LITBOOL of bool			
-                | LITINT of int
-                | LITSTRING of string
-                | LITCHAR of char
-                | ID of string
-                | PRINT
-                | EOF *)
 
-    (* Incrmenta o contador de linha do analisador léxico para controlar qual
-       linha ele está analisando no presente momento. *)
-    let incr_num_linha lexbuf =
-        let pos = lexbuf.lex_curr_p in
-        lexbuf.lex_curr_p <- { pos with
-            pos_lnum = pos.pos_lnum + 1;
-            pos_bol = pos.pos_cnum;
-        }
+  (* Exceptions para erro léxico *)
+  exception Erro of string
 
-    (* Gera uma mensagem de erro de caractere desconhecido. *)
-    let msg_erro lexbuf c =
-        let pos = lexbuf.lex_curr_p in
-        let lin = pos.pos_lnum
-        and col = pos.pos_cnum - pos.pos_bol - 1 in
-        sprintf "%d-%d: caractere desconhecido %c" lin col c
 
-    (* Cria uma exceção baseada em uma mensagem de erro genérica. *)
-    let erro lin col msg =
-        let mensagem = sprintf "%d-%d: %s" lin col msg in
-        failwith mensagem
+  (* Incrmenta o contador de linha do analisador léxico para controlar qual
+     linha ele está analisando no presente momento. *)
+  let incr_num_linha lexbuf =
+    let pos = lexbuf.lex_curr_p in
+    lexbuf.lex_curr_p <- { pos with
+      pos_lnum = pos.pos_lnum + 1;
+      pos_cnum = pos.pos_bol;
+    }
+
+
+  (* Gera uma mensagem de erro de caractere desconhecido. *)
+  let msg_erro lexbuf c =
+    let pos = lexbuf.lex_curr_p in
+    let lin = pos.pos_lnum
+    and col = pos.pos_cnum - pos.pos_bol - 1 in
+    sprintf "%d-%d: caractere desconhecido '%c'" lin col c
+
+
+  (* Cria uma exceção baseada em uma mensagem de erro genérica. *)
+  let erro lin col msg =
+    let mensagem = sprintf "%d-%d: %s" lin col msg in
+    mensagem    
 }
 
 (* Abreviações: se as regras forem muito extensas, uma boa prática é criar
@@ -124,7 +69,7 @@ rule token = parse
 | ')'                                   { FPAR }
 | '['                                   { ACOL }
 | ']'                                   { FCOL }
-(*| "import"                              { IMPORT }*)
+| "String[] args"                       { token lexbuf }
 | "+="                                  { MAISIGUAL }
 | "-="                                  { MENOSIGUAL }
 | "*="                                  { VEZESIGUAL }
@@ -134,8 +79,11 @@ rule token = parse
 | '+'                                   { MAIS }
 | '='                                   { ATRIB }
 | "public"                              { PUBLIC }
+| "%"                                   { MOD }
 | "char"                                { CHAR }
 | "boolean"                             { BOOLEAN }
+| "return"                              { RETURN }
+| "default"                             { DEFAULT }
 | "class"                               { CLASS }
 | "static"                              { STATIC }
 | "void"                                { VOID }
@@ -186,7 +134,8 @@ rule token = parse
                                           let buffer = Buffer.create 1 in
                                           let str = leia_string lin col buffer lexbuf in
                                           LITSTRING str }
-| _ as c                                { failwith (msg_erro lexbuf c) }
+(*| _ as c                                { failwith (msg_erro lexbuf c) }*)
+| _ as c                                { raise (Erro (msg_erro lexbuf c)) }
 | eof                                   { EOF }
 and leia_string lin col buffer = parse
   '"'                                   { Buffer.contents buffer }
@@ -200,7 +149,8 @@ and leia_string lin col buffer = parse
                                           leia_string lin col buffer lexbuf }
 | _ as c                                { Buffer.add_char buffer c;
                                           leia_string lin col buffer lexbuf }
-| eof                                   { erro lin col "A string nao foi fechada" }
+(*| eof                                   { erro lin col "A string nao foi fechada" }*)
+| eof                                   { raise (Erro (erro lin col "A string nao foi fechada")) }
 and comentario_bloco lin col n = parse
   "*/"                                  { if n=0 then token lexbuf
                                           else comentario_bloco lin col (n-1) lexbuf }
@@ -211,4 +161,5 @@ and comentario_bloco lin col n = parse
 | novalinha                             { incr_num_linha lexbuf;
                                           comentario_bloco lin col n lexbuf }
 | _                                     { comentario_bloco lin col n lexbuf }
-| eof                                   { erro lin col "Comentario bloco nao fechado" }
+(*| eof                                   { erro lin col "Comentario bloco nao fechado" }*)
+| eof { raise (Erro (erro lin col "A string nao foi fechada")) }

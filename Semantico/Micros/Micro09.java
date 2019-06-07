@@ -10,16 +10,16 @@ public class Micro09 {
         System.out.printf("Digite a venda: ");
         venda = Float.parseFloat(s.nextLine());
 
-        if ((venda < 500) || (preco < 30)) {
-            novoPreco = preco + 10 / 100 * preco;
+        if ((venda < 500.0) || (preco < 30.0)) {
+            novoPreco = preco + 10.0 / 100.0 * preco;
         }
         else {
-            if ((venda >= 500 && venda < 1200) || (preco >= 30 && preco < 80)) {
-                novoPreco = preco + 15 / 100 * preco;
+            if ((venda >= 500.0 && venda < 1200.0) || (preco >= 30.0 && preco < 80.0)) {
+                novoPreco = preco + 15.0 / 100.0 * preco;
             }
             else {
-                if (venda >= 1200 || preco >= 80) {
-                    novoPreco = preco - 20 / 100 * preco;
+                if (venda >= 1200.0 || preco >= 80.0) {
+                    novoPreco = preco - 20.0 / 100.0 * preco;
                 }
             }
         }
